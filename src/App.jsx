@@ -4,6 +4,7 @@ import { Home } from './pages/Home/Home';
 import { Signup } from './pages/auth/Signup';
 import { Login } from './pages/auth/Login';
 import { Layout } from './Layout/Layout';
+import { Listing } from './pages/ListingPage/Listing';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         {/* route for home */}
         <Route  element={<Layout />}>
           <Route path='/' element={<Home />} />
+          <Route path='/listing/:filter' element={<Listing />} />
         </Route>
       </Routes>
     </BrowserRouter>

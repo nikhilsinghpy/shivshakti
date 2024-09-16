@@ -6,15 +6,15 @@ import { IoPhonePortraitOutline } from 'react-icons/io5'
 export const StatCard = ({ title, value, icon, percentage, change, color }) => {
   return (
     <div>
-        <Card className='p-4 w-full' style={{maxWidth: '300px'}}>
+        <Card className='p-4 w-full stat-card' style={{maxWidth: '300px'}}>
             <CardBody className='flex justify-between flex-row gap-5 items-center'>
                 <div className='flex flex-col items-start'>
                     <h4 className='text-lg font-bold'>4563</h4>
-                    <p className='text-xs font-medium'>Total Orders</p>
+                    <p className={`text-xs font-medium ${color}`}>Total Orders</p>
                 </div>
                 <div className='flex flex-col items-start'>
                     <h4 className='text-lg font-bold'>4563</h4>
-                    <p className='text-xs font-medium'>Total Orders</p>
+                    <p className={`text-xs font-medium ${color}`}>Total Orders</p>
                 </div>
                 <div>
                     <div className='stat-card-icon'> 

@@ -1,9 +1,12 @@
-.closebutton{
-    display: none !important;
-}
-
-@media (max-width: 768px) {
-    .closebutton{
-        display: block !important;
+/* Sidenav.css */
+@media (min-width: 640px) {
+    /* This will make sure the sidebar is visible on larger screens */
+    .translate-x-0 {
+      transform: translateX(0);
     }
-}
+  
+    .-translate-x-full {
+      transform: translateX(0);
+    }
+  }
+  

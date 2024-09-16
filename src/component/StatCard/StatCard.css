@@ -9,3 +9,12 @@
     font-size: 20px;
     font-weight: bold;
 }
+
+@media screen and (max-width: 640px) {
+    .stat-card h4{
+        font-size: 14px !important;
+    }
+    .stat-card p{
+        font-size: 12px !important;
+    }
+}
