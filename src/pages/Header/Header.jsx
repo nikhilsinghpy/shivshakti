@@ -54,18 +54,6 @@ export const Header = ({ toggleSidebar , isSidebarOpen }) => {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link to="/features" className="nav-link">Features</Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link to="/customers" aria-current="page" className="nav-link">Customers</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link to="/integrations" className="nav-link">Integrations</Link>
-        </NavbarItem>
-      </NavbarContent>
-
       {login ? (
         <NavbarContent as="div" justify="end">
           <Dropdown placement="bottom-end">
