@@ -5,7 +5,7 @@ import logo from "../../assets/SipTok_Logo.png";
 import "./Header.css";
 
 export const Header = ({ toggleSidebar , isSidebarOpen }) => {
-  const [login, setLogin] = useState(false);
+  const [login, setLogin] = useState(true);
   return (
     <Navbar className="navbar" variant="sticky" isBordered>
       <NavbarContent>
