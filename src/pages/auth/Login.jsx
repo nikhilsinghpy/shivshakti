@@ -1,83 +1,179 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
-import logo from '../../assets/SipTok_Logo.png';
+import { json, Link, useNavigate } from 'react-router-dom'
+import logo from '../../assets/SipTok_Logo.png'
+import { GetMethodAPI } from '../../api/GetMethondAPi'
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 export const Login = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    email: '',
-    password: ''
-  });
+    username: '',
+    password: '',
+    cloud_name: '',
+  })
+  const [loading, setLoading] = useState(false)
+  const [errors, setErrors] = useState({})
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
     setFormData({
       ...formData,
-      [name]: value
-    });
-  };
+      [name]: value,
+    })
+  }
 
-  const handleSubmit = (e) => {
+  const validate = () => {
+    let formErrors = {}
+
+    if (!formData.username.trim()) {
+      formErrors.username = 'Username is required'
+    }
+    if (!formData.password) {
+      formErrors.password = 'Password is required'
+    }
+    if (!formData.cloud_name.trim()) {
+      formErrors.cloud_name = 'Cloud name is required'
+    }
+
+    setErrors(formErrors)
+    return Object.keys(formErrors).length === 0
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form Data:', formData);
-    // You can also add form submission logic here
+  
+    if (!validate()) {
+      return;
+    }
+  
+    setLoading(true);
+    const toastId = toast.loading("Login in process");
+  
+    try {
+      const response = await GetMethodAPI(
+        'login.php',
+        `username=${formData.username}&password=${formData.password}&cloud_name=${formData.cloud_name}`
+      );
+      // console.log(response.Sucess)
+      if (response.Sucess === "true") {  
+        toast.dismiss(toastId);
+        toast.success(response.Message);
+        sessionStorage.setItem("data", JSON.stringify(response.Data))
+        setTimeout(() => {
+          navigate("/home")
+        }, 2000);
+        // console.log("Login successful:", response.Message);
+      } else {
+        toast.dismiss(toastId);
+        toast.warn(response.Message);
+        // console.log("Login failed:", response.Message);
+      }
+    } catch (error) {
+      toast.dismiss(toastId);
+      toast.error("An error occurred: " + error.message);  
+      // console.log("Error during login:", error);
+    } finally {
+      setLoading(false);
+    }
   };
-
+  
   return (
-    <div>
-      <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
-        <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <img className="mx-auto h-10 w-auto" src={logo} alt="Your Company"/>
-        </div>
+    <div
+      style={{
+        background:
+          'linear-gradient(151deg, rgba(205,232,255,1) 35%, rgba(5,74,218,1) 100%)',
+        height: '100vh',
+      }}
+      className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 items-center"
+    >
+      <ToastContainer />
+      <div className="bg-white rounded-lg shadow-lg flex max-w-4xl w-full overflow-hidden h-full">
+        {/* Left Side (Login Form) */}
+        <div className="w-1/2 p-8 bg-white flex flex-col justify-center">
+          <h2 className="text-3xl font-bold mb-6 text-gray-900">LOGIN</h2>
+          <p className="text-gray-600 mb-4">Get Start a new Experience</p>
 
-        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm" style={{border: '.5px solid #ccc', borderRadius: '10px', padding: '20px'}}>
-          <h2 className="mb-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
-          <form className="space-y-6" onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">Email address</label>
-              <div className="mt-2">
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="block w-full rounded-md px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
+          {/* Form */}
+          <form>
+            <div className="mb-4">
+              <label className="block text-gray-700 mb-2">Username</label>
+              <input
+                type="text"
+                className={`w-full p-3 border ${errors.username ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:outline-none focus:border-indigo-500`}
+                placeholder="Username"
+                name="username"
+                onChange={handleChange}
+                disabled={loading}
+              />
+              {errors.username && <p className="text-red-500 text-sm">{errors.username}</p>}
             </div>
 
-            <div>
-              <div className="flex items-center justify-between">
-                <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">Password</label>
-                <div className="text-sm">
-                  <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
-                </div>
-              </div>
-              <div className="mt-2">
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  autoComplete="current-password"
-                  value={formData.password}
-                  onChange={handleChange}
-                  required
-                  className="block w-full rounded-md  px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
+            <div className="mb-6">
+              <label className="block text-gray-700 mb-2">Password</label>
+              <input
+                type="password"
+                className={`w-full p-3 border ${errors.password ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:outline-none focus:border-indigo-500`}
+                placeholder="Password"
+                name="password"
+                onChange={handleChange}
+                disabled={loading}
+              />
+              {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
             </div>
 
-            <div>
-              <button type="submit" className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign in</button>
+            <div className="mb-6">
+              <label className="block text-gray-700 mb-2">Cloud Name</label>
+              <input
+                type="text"
+                className={`w-full p-3 border ${errors.cloud_name ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:outline-none focus:border-indigo-500`}
+                placeholder="Cloud Name"
+                name="cloud_name"
+                onChange={handleChange}
+                disabled={loading}
+              />
+              {errors.cloud_name && <p className="text-red-500 text-sm">{errors.cloud_name}</p>}
             </div>
+
+            <button
+              className="w-full bg-indigo-500 text-white p-3 rounded-lg font-semibold hover:bg-indigo-600 transition duration-300 flex justify-center items-center"
+              onClick={handleSubmit}
+              disabled={loading}
+            >
+              {loading ? (
+                <svg
+                  className="animate-spin h-5 w-5 mr-3 text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+                  ></path>
+                </svg>
+              ) : (
+                "Login Now"
+              )}
+            </button>
           </form>
-
-          <p className="mt-10 text-center text-sm text-gray-500">
-            Not a member?
-            <Link to="/signup" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Create an account</Link>
-          </p>
+        </div>
+        {/* Right Side (Image and Text) */}
+        <div className="w-1/2 bg-gradient-to-r from-blue-200 via-blue-500 to-blue-800 relative flex items-center justify-center">
+          <div className="text-center px-6">
+            <div className="relative bg-white rounded-lg shadow-lg p-6">
+              <img src={logo} alt="" className="w-[200px] mx-6" />
+            </div>
+          </div>
         </div>
       </div>
     </div>

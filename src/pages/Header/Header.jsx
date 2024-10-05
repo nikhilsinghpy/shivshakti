@@ -1,11 +1,25 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Avatar, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@nextui-org/react";
 import logo from "../../assets/SipTok_Logo.png";
 import "./Header.css";
+import { RetrieveUserData } from '../../utils/RetrieveUserData';
 
 export const Header = ({ toggleSidebar , isSidebarOpen }) => {
+  
+  const navigate = useNavigate();
   const [login, setLogin] = useState(true);
+  const [userData , setUserData] = useState(null)
+
+  useEffect(()=>{
+    const userInfo = RetrieveUserData();
+    setUserData(userInfo[0])
+  },[])
+
+  const handleLogOut = ()=>{
+    sessionStorage.clear();
+    navigate("/")
+  }
   return (
     <Navbar className="navbar" variant="sticky" isBordered>
       <NavbarContent>
@@ -49,7 +63,7 @@ export const Header = ({ toggleSidebar , isSidebarOpen }) => {
         </button>
         <NavbarBrand>
           <Link to="/">
-            <img src={logo} alt="SipTok" className="logo" />
+            <img src={logo} alt="SipTok" className="logo2" />
           </Link>
         </NavbarBrand>
       </NavbarContent>
@@ -71,15 +85,10 @@ export const Header = ({ toggleSidebar , isSidebarOpen }) => {
             <DropdownMenu aria-label="Profile Actions" variant="flat">
               <DropdownItem key="profile" className="h-14 gap-2">
                 <p className="font-semibold">Signed in as</p>
-                <p className="font-semibold">zoey@example.com</p>
+                <p className="font-semibold">{userData?.name || "user"}</p>
               </DropdownItem>
-              <DropdownItem key="settings">My Settings</DropdownItem>
-              <DropdownItem key="team_settings">Team Settings</DropdownItem>
-              <DropdownItem key="analytics">Analytics</DropdownItem>
-              <DropdownItem key="system">System</DropdownItem>
-              <DropdownItem key="configurations">Configurations</DropdownItem>
-              <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
-              <DropdownItem key="logout" color="danger">
+              <DropdownItem key="settings">Profile</DropdownItem>
+              <DropdownItem key="logout" color="danger" onClick={handleLogOut}>
                 Log Out
               </DropdownItem>
             </DropdownMenu>
