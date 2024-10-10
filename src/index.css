@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    @apply bg-gray-100;
+    scroll-behavior: smooth;
+}
+* {
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+}

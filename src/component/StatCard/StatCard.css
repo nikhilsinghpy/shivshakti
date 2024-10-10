@@ -9,6 +9,12 @@
     font-size: 20px;
     font-weight: bold;
 }
+.stat-card{
+    transition: all 0.3s ease-in-out;
+}
+.stat-card:hover{
+    transform: scale(1.07);
+}
 
 @media screen and (max-width: 640px) {
     .stat-card h4{
