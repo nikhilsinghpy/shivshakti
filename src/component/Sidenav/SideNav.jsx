@@ -2,28 +2,31 @@ import React from 'react';
 import './Sidenav.css';
 import { Link } from 'react-router-dom';
 import {Button} from "@nextui-org/react";
-import { IoClose } from 'react-icons/io5';
+import logo from '../../assets/SipTok_Logo.png';
+import { IoMdSettings } from 'react-icons/io';
+import { FaUserAlt } from 'react-icons/fa';
 
-export const SideNav = ({ isOpen, toggleSidebar }) => {
+export const SideNav = ({ isOpen, toggle}) => {
   return (
     <aside
       id="sidebar-multi-level-sidebar"
-      className={`fixed top-0 left-0 z-50 w-64 h-full transition-transform bg-gray-50 dark:bg-gray-800 ${
-        isOpen ? 'translate-x-0' : '-translate-x-full'
-      }`}
+      className='w-[240px] top-0 left-0 h-full z-40 bg-white border-r border-gray-200'
       aria-label="Sidebar"
       style={{
         height: '100vh',
         borderRight: '1px solid #E5E7EB',
+        position: 'fixed',
       }}
     >
-      <div className="h-full px-3 py-4 overflow-y-auto">
+      <div className="h-full  py-3 overflow-y-auto">
       <div className='flex w-full justify-end items-end mb-3'>
-        <Button isIconOnly  style={{fontSize:"22px"}} onClick={toggleSidebar}>
-          <IoClose />
-        </Button>   
+        <div className="logo-container px-3">
+          <Link to="/home">
+            <img src={logo} alt="" />
+          </Link>
+        </div>
       </div>
-        <ul className="space-y-2 font-medium">
+        <ul className="space-y-2 font-medium px-3">
           <li>
             <Link
               to="/home"
@@ -53,17 +56,9 @@ export const SideNav = ({ isOpen, toggleSidebar }) => {
                 dropdown.classList.toggle('hidden');
               }}
             >
-              <svg
-                className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 18 21"
-              >
-                <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z" />
-              </svg>
+              <IoMdSettings />
               <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">
-                E-commerce
+                Setting
               </span>
               <svg
                 className="w-3 h-3"
@@ -84,26 +79,100 @@ export const SideNav = ({ isOpen, toggleSidebar }) => {
             <ul id="dropdown-example" className="hidden py-2 space-y-2">
               <li>
                 <Link
-                  to="/"
+                  to="#"
                   className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                 >
-                  Products
+                  Speaker
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/"
+                  to="#"
                   className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                 >
-                  Billing
+                  Zone
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/"
+                  to="#"
                   className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                 >
-                  Invoice
+                  Mobile List
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="#"
+                  className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                >
+                  Audio List
+                </Link>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <button
+              type="button"
+              className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+              aria-controls="dropdown-example"
+              data-collapse-toggle="dropdown-example"
+              onClick={() => {
+                const dropdown = document.getElementById('dropdown-example-2');
+                dropdown.classList.toggle('hidden');
+              }}
+            >
+              <FaUserAlt />
+              <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">
+                Manage User
+              </span>
+              <svg
+                className="w-3 h-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </button>
+            <ul id="dropdown-example-2" className="hidden py-2 space-y-2">
+              <li>
+                <Link
+                  to="#"
+                  className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                >
+                  Create Account
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="#"
+                  className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                >
+                  Manage Password
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="#"
+                  className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                >
+                  Access Rights
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="#"
+                  className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                >
+                  Add Role
                 </Link>
               </li>
             </ul>

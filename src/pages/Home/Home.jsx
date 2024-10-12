@@ -42,37 +42,40 @@ export const Home = () => {
     fetchData();
   }, []);
 
-  const handletemp = ()=>{
-    console.log(speaker);
-  }
-
   return (
-    <div className="w-full">
+    <div className="w-full p-4">
       <Card className="p-4 mb-4">
         <CardHeader>
-          <h1 className="text-3xl font-bold">Dashboard</h1>
+          <h1 className="text-xl font-bold">Dashboard</h1>
         </CardHeader>
         <CardBody>
           <div className="top-card ">
             <StatCard
-              icon={<CiMobile1 className="text-2xl text-blue-500" />}
-              title={"Total Mobile"}
+              heading={"IP Speaker"}
+              title={"online"}
+              value={data?.Speaker}
+              secTitile={"offline"}
+              secValue={data?.inactive_Speaker || "0"}
+            />
+            <StatCard
+              heading={"IP Phone"}
+              title={"online"}
               value={data?.Mobile}
-              secTitile={"Active Mobile"}
+              secTitile={"offline"}
               secValue={data?.ActiveMobile || "0"}
             />
             <StatCard
-              icon={<RxSpeakerQuiet className="text-2xl text-orange-500" />}
-              title={"Active Announcements"}
+              heading={"Announcements"}
+              title={"active"}
               value={data?.active_announcements}
-              secTitile={"Inactive Announcements"}
+              secTitile={"inactive"}
               secValue={data?.inactive_announcements || "0"}
             />
             <StatCard
-              icon={<CiSpeaker className="text-2xl text-green-500" />}
-              title={"Active Speaker"}
+              heading={"Mobile App"}
+              title={"online"}
               value={data?.Speaker}
-              secTitile={"Inactive Speaker"}
+              secTitile={"offline"}
               secValue={data?.inactive_Speaker || "0"}
             />
           </div>
@@ -81,15 +84,15 @@ export const Home = () => {
 
       <div className="container-fluid mx-auto">
         <div className="flex flex-wrap gap-4">
-          <div className="w-full lg:w-[68%] bg-blue-100 p-4">
+          <div className="w-full lg:w-[68%]">
             {/* Speaker component with speakerchange prop */}
-            <Speaker speakerchange={handleSpeakerselect} />
+            <Speaker speakerchange={handleSpeakerselect}  checkedSpeakers={speaker}/>
           </div>
 
-          <div className="w-full lg:w-[30%] bg-green-100 p-4">
+          <div className="w-full lg:w-[30%]">
             <Card className="p-4 mb-4">
               <CardHeader style={{ borderBottom: ".5px #ccc" }}>
-                <h1 className="text-3xl font-bold mb-4">System Info</h1>
+                <h1 className="text-xl font-bold mb-4">System Info</h1>
               </CardHeader>
               <CardBody>
                 <PieChartComp />

@@ -7,7 +7,7 @@ import { RetrieveUserData } from '../../utils/RetrieveUserData';
 import { IoMdClose } from 'react-icons/io';
 import { MdMenu } from 'react-icons/md';
 
-export const Header = ({ toggleSidebar , isSidebarOpen }) => {
+export const Header = () => {
   
   const navigate = useNavigate();
   const [login, setLogin] = useState(true);
@@ -25,12 +25,6 @@ export const Header = ({ toggleSidebar , isSidebarOpen }) => {
   return (
     <Navbar className="navbar" variant="sticky" isBordered>
       <NavbarContent>
-      <Button isIconOnly onClick={toggleSidebar} className="font-semibold" style={{fontSize:"22px"}}>
-       {
-        isSidebarOpen ? <IoMdClose /> : <MdMenu />
-
-       }
-      </Button>
         <NavbarBrand>
           <Link to="/">
             <img src={logo} alt="SipTok" className="logo2" />

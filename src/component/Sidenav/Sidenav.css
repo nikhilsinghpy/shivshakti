@@ -1,4 +1,18 @@
 /* Sidenav.css */
+.logo-container{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 7px;
+  width: 100%;
+}
+.logo-container img{
+  width: 100px;
+  height: 45px;
+  object-fit: contain;
+}
+
 @media (min-width: 640px) {
     /* This will make sure the sidebar is visible on larger screens */
     .translate-x-0 {

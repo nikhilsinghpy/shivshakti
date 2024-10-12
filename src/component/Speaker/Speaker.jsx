@@ -19,7 +19,7 @@ import {
   useDisclosure,
 } from '@nextui-org/react'
 
-export const Speaker = ({ speakerchange }) => {
+export const Speaker = ({ speakerchange  , checkedSpeakers}) => {
   const [speakerlist, setSpeakerlist] = useState([])
   const [selectedSpeaker, setSelectedSpeaker] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
@@ -28,24 +28,34 @@ export const Speaker = ({ speakerchange }) => {
   const [location,setlocation] = useState([])
   const [sublocation,setsublocation] = useState([])
 
-  const itemsPerPage = 21 // Items per page
+  const itemsPerPage = 15 // Items per page
   const { isOpen, onOpen, onOpenChange } = useDisclosure() // custom hook for model
 
   const [formData, setFormData] = useState({
     exten_id: "",
-    dialplan_id: "",
+    dialplan_id: "46",
     exten_name: "",
     exten_loc: "",
     exten_subloc: "",
     exten_remarks: "",
     exten_status: "", 
     exten_type: "",
-    cloud_id: "",
+    cloud_id: "1",
   });
 
   // Handler for updating form state
   const handleChange = (e) => {
+    
     const { name, value } = e.target;
+    console.log(name, value)
+    if (name === "exten_loc") {
+      fetchSubLocation(value)
+      console.log(value)
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
     setFormData({
       ...formData,
       [name]: value,
@@ -55,19 +65,20 @@ export const Speaker = ({ speakerchange }) => {
     console.log(formData);
   }
 
-  const fetchSubLocation = async () => {
+  const fetchSubLocation = async (value) => {
     try {
       const response = await GetMethodAPI(
         'getsublocation.php',
-        `loc_id=0`
+        `loc_id=${value}`
       )
       const locationData = response.Data
-      // console.log("sublocation",locationData)
       setsublocation(locationData)
     } catch (error) {
       console.log(error)
     }
   }
+
+
   const fetchlocation = async () => {
     const userInfo = RetrieveUserData()[0]
     try {
@@ -76,7 +87,6 @@ export const Speaker = ({ speakerchange }) => {
         `cloud_id=${userInfo.cloud_id}`
       )
       const locationData = response.Data
-      // console.log("location",locationData)
       setlocation(locationData)
     } catch (error) {
       console.log(error)
@@ -107,6 +117,7 @@ export const Speaker = ({ speakerchange }) => {
       console.log(error)
     }
   }
+
   // Handle page change
   const handlePageChange = (page) => {
     setCurrentPage(page) // Update the current page
@@ -116,8 +127,8 @@ export const Speaker = ({ speakerchange }) => {
   }
   // Handle dropdown zone selection
   const handleDropDownChange = (value) => {
-    console.log(value) // Output the selected value
-    // You can implement filtering based on the selected zone here
+    console.log(value) 
+    
   }
 
   useEffect(() => {
@@ -129,14 +140,14 @@ export const Speaker = ({ speakerchange }) => {
   return (
     <Card className="p-4 mb-4 flex justify-center items-center min-h-[90vh] ">
       <CardHeader>
-        <div className="flex justify-between flex-row gap-5 items-center w-full">
-          <h1 className="text-3xl font-bold mb-4">IP Speaker List</h1>
+        <div className="flex justify-between flex-row gap-5 items-center w-full border-b pb-4">
+          <h1 className="text-xl font-bold mb-4">IP Speaker List</h1>
           <div className="flex justify-between flex-row gap-5 items-center">
             <Select
-              label="Select Zone"
               placeholder="Select a zone"
               className="max-w-xs w-40"
               onChange={handleDropDownChange}
+              aria-label="Zone Selection"
             >
               {Selectdata.map((item) => (
                 <SelectItem key={item.id} value={item.name}>
@@ -151,7 +162,7 @@ export const Speaker = ({ speakerchange }) => {
         </div>
       </CardHeader>
 
-      <ProductCard data={selectedSpeaker} speakerchange={speakerchange} />
+      <ProductCard data={selectedSpeaker} speakerchange={speakerchange} checkedSpeakers={checkedSpeakers}  />
 
       <Pagination
         total={totalPage}
@@ -178,9 +189,17 @@ export const Speaker = ({ speakerchange }) => {
                     <label for="exten_id" class="block text-sm font-medium text-gray-700">No.</label>
                     <input type="text" id="exten_id" onChange={handleChange} name="exten_id" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Enter No." />
                   </div>
-                  <div class="mb-4">
-                    <label for="dialplan_id" class="block text-sm font-medium text-gray-700">Dialplan ID</label>
-                    <input type="text" id="dialplan_id" onChange={handleChange} name="dialplan_id" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Enter Dialplan ID" />
+                  <div className="mb-4">
+                    <label htmlFor="dialplan_id" className="block text-sm font-medium text-gray-700">Dialplan ID</label>
+                    <input
+                      type="text"
+                      id="dialplan_id"
+                      value={formData.dialplan_id}
+                      name="dialplan_id"
+                      disabled // Disable the input
+                      className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-gray-100 cursor-not-allowed" // Add background and cursor style
+                      placeholder="Enter Dialplan ID"
+                    />
                   </div>
                   <div class="mb-4">
                     <label for="exten_name" class="block text-sm font-medium text-gray-700">Extension Name</label>
