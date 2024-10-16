@@ -12,12 +12,22 @@ import { BottomNav } from '../../component/Bottomnav/BottomNav';
 export const Home = () => {
   const [data, setData] = useState(null);
   const [speaker, setSpeaker] = useState([]);
+  const [activeData, setactiveData] = useState([])
 
   // Fetch dashboard data
   const fetchData = async () => {
     try {
       const response = await getapi('dashboarddata.php');
       setData(response[0][0]); // Assuming the data is structured as response[0][0]
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const fetchActiveData = async () => {
+    try {
+      const response = await getapi('onchk.php');
+      // console.log(response)
+      setactiveData(response);
     } catch (error) {
       console.log(error);
     }
@@ -40,6 +50,7 @@ export const Home = () => {
   // Fetch data on component mount
   useEffect(() => {
     fetchData();
+    fetchActiveData();
   }, []);
 
   return (
@@ -53,16 +64,16 @@ export const Home = () => {
             <StatCard
               heading={"IP Speaker"}
               title={"online"}
-              value={data?.Speaker}
+              value={activeData?.onlinespeakers}
               secTitile={"offline"}
-              secValue={data?.inactive_Speaker || "0"}
+              secValue={data?.Speaker - activeData?.onlinespeakers}
             />
             <StatCard
               heading={"IP Phone"}
               title={"online"}
-              value={data?.Mobile}
+              value={activeData?.onlinemobile}
               secTitile={"offline"}
-              secValue={data?.ActiveMobile || "0"}
+              secValue={data?.Mobile - activeData?.onlinemobile}
             />
             <StatCard
               heading={"Announcements"}
@@ -74,9 +85,9 @@ export const Home = () => {
             <StatCard
               heading={"Mobile App"}
               title={"online"}
-              value={data?.Speaker}
+              value={activeData?.onlinemobile}
               secTitile={"offline"}
-              secValue={data?.inactive_Speaker || "0"}
+              secValue={data?.Mobile - activeData?.onlinemobile}
             />
           </div>
         </CardBody>

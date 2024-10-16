@@ -22,7 +22,7 @@ export const PieChartComp = () => {
       ];
   return (
     <div>
-      <PieChart width={250} height={250}>
+      <PieChart width={280} height={250}>
         <Pie
           dataKey="value"
           isAnimationActive={false}

@@ -7,6 +7,9 @@
   padding-bottom: 7px;
   width: 100%;
 }
+.logo-container.open{
+  border: none;
+}
 .logo-container img{
   width: 100px;
   height: 45px;
