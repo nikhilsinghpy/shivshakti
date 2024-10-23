@@ -73,7 +73,7 @@ const EditSpeaker = ({ onOpenChange, isOpen , speaker }) => {
     <div>
         {isOpen && (
             <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                <div className="bg-white w-full max-w-md p-6 rounded-lg shadow-lg">
+                <div className="bg-white w-full max-w-md p-6 rounded-lg shadow-lg h-[600px] overflow-y-scroll">
                     <div className="flex justify-between items-center">
                         <h3 className="text-lg font-semibold">Edit Speaker</h3>
                         <button onClick={() => onOpenChange(false)} className="text-gray-500 hover:text-gray-700">
@@ -81,7 +81,7 @@ const EditSpeaker = ({ onOpenChange, isOpen , speaker }) => {
                         </button>
                     </div>
 
-                    <div className="mt-4 h-[600px] overflow-auto">
+                    <div className="mt-4">
                         <div className="mt-4">
                             <label htmlFor="exten_name">Select speaker To Edit</label>
                             <select name="selected_speaker" id="" className="border border-gray-300 rounded-md p-2 w-full mt-1" onChange={handleSpeakerChange}>

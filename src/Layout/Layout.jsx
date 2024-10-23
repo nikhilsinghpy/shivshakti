@@ -5,11 +5,13 @@ import { Header } from '../pages/Header/Header'
 import { Footer } from '../pages/Footer/Footer'
 import { useState } from 'react'
 export const Layout = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
+  
   return (
     <div>
       <div className="flex flex-row">
