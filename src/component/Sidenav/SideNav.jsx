@@ -84,7 +84,7 @@ export const SideNav = ({isOpen ,toggleSidebar }) => {
                 />
               </svg>
             </button>
-            <ul id="dropdown-example" className="hidden py-2 space-y-2">
+            <ul id="dropdown-example" className={`hidden py-2 space-y-2 ${isOpen ? '' : 'position-absolute'}`}>
               <li>
                 <Link
                   to="#"
@@ -136,7 +136,7 @@ export const SideNav = ({isOpen ,toggleSidebar }) => {
                 />
               </svg>
             </button>
-            <ul id="dropdown-example-2" className="hidden py-2 space-y-2">
+            <ul id="dropdown-example-2" className={`hidden py-2 space-y-2 ${isOpen ? '' : 'position-absolute'}`}>
               <li>
                 <Link
                   to="#"
