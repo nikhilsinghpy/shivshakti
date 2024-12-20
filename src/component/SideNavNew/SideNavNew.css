@@ -8,5 +8,10 @@
     border-top-left-radius: 2rem;
     border-bottom-left-radius: 2rem;
     padding: 1rem 1.5rem;
+}
+.side-nav-item:hover{
+    background-color: #F1F2F7;
+}
+.side-nav-item.active{
     background-color: #F1F2F7;
 }
