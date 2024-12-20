@@ -1,105 +1,126 @@
-import React from "react";
-import { Eye, Edit, Trash, FileText, Search } from "lucide-react";
+import React, { useState } from 'react';
+import { Edit2, Trash2, File } from 'lucide-react';
 
-const DataTable = ({ data, onEdit, onDelete, onView, exportCsv }) => {
+const DataTable = ({ 
+  data, 
+  columns, 
+  onEdit, 
+  onDelete, 
+  onView, 
+  exportCsv, 
+  title = "Table", 
+  itemsPerPage = 8 
+}) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // Filtered and Paginated Data
+  const filteredData = data.filter((row) =>
+    Object.values(row).some((value) =>
+      value.toString().toLowerCase().includes(searchQuery.toLowerCase())
+    )
+  );
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const paginatedData = filteredData.slice(startIndex, startIndex + itemsPerPage);
+
+  // Pagination Logic
+  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+
   return (
-    // <div className="p-4 bg-gray-100 rounded-lg">
-    //   <div className="flex justify-between items-center mb-4">
-    //     <h2 className="text-xl font-bold">Call logs</h2>
-    //     <div className="flex items-center">
-    //       <div className="relative">
-    //         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-    //         <input
-    //           type="text"
-    //           placeholder="Search"
-    //           className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-    //         />
-    //       </div>
-    //       <button
-    //         className="ml-4 px-4 py-2 bg-green-500 text-white rounded-lg shadow flex items-center space-x-2 hover:bg-green-600"
-    //         onClick={exportCsv}
-    //       >
-    //         <FileText className="w-4 h-4" />
-    //         <span>Export CSV</span>
-    //       </button>
-    //     </div>
-    //   </div>
-    //   <table className="min-w-full bg-white border border-gray-200 rounded-lg shadow-md">
-    //     <thead>
-    //       <tr className="bg-blue-500 text-white text-left">
-    //         <th className="py-2 px-4">Caller ↓</th>
-    //         <th className="py-2 px-4">Callee ↓</th>
-    //         <th className="py-2 px-4">Call Type ↓</th>
-    //         <th className="py-2 px-4">Call Start Time ↓</th>
-    //         <th className="py-2 px-4">Image ↓</th>
-    //         <th className="py-2 px-4 text-center">Actions</th>
-    //       </tr>
-    //     </thead>
-    //     <tbody>
-    //       {data.map((row, index) => (
-    //         <tr
-    //           key={index}
-    //           className={`${
-    //             index % 2 === 0 ? "bg-gray-50" : "bg-white"
-    //           } hover:bg-gray-100`}
-    //         >
-    //           <td className="py-2 px-4">{row.caller}</td>
-    //           <td className="py-2 px-4">{row.callee}</td>
-    //           <td className="py-2 px-4">{row.callType}</td>
-    //           <td className="py-2 px-4">{row.startTime}</td>
-    //           <td className="py-2 px-4 text-center">
-    //             <img
-    //               src={row.image}
-    //               alt="Call Image"
-    //               className="w-8 h-8 rounded-full mx-auto"
-    //             />
-    //           </td>
-    //           <td className="py-2 px-4 flex justify-center space-x-2">
-    //             <button
-    //               className="p-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600"
-    //               onClick={() => onView(row)}
-    //             >
-    //               <Eye className="w-4 h-4" />
-    //             </button>
-    //             <button
-    //               className="p-2 bg-yellow-500 text-white rounded-lg shadow hover:bg-yellow-600"
-    //               onClick={() => onEdit(row)}
-    //             >
-    //               <Edit className="w-4 h-4" />
-    //             </button>
-    //             <button
-    //               className="p-2 bg-red-500 text-white rounded-lg shadow hover:bg-red-600"
-    //               onClick={() => onDelete(row)}
-    //             >
-    //               <Trash className="w-4 h-4" />
-    //             </button>
-    //           </td>
-    //         </tr>
-    //       ))}
-    //     </tbody>
-    //   </table>
-    //   <div className="flex justify-between items-center mt-4">
-    //     <p className="text-sm text-gray-600">
-    //       Showing data 1 to {data.length} of 256 entries
-    //     </p>
-    //     <div className="flex space-x-1">
-    //       <button className="px-3 py-1 bg-blue-500 text-white rounded shadow hover:bg-blue-600">
-    //         1
-    //       </button>
-    //       <button className="px-3 py-1 bg-gray-300 rounded shadow hover:bg-gray-400">
-    //         2
-    //       </button>
-    //       <button className="px-3 py-1 bg-gray-300 rounded shadow hover:bg-gray-400">
-    //         3
-    //       </button>
-    //       {/* Add more buttons for pagination as needed */}
-    //     </div>
-    //   </div>
-    // </div>
     <div className="flex flex-col p-4">
-        <div className="bg-white w-full min-h-[500px] p-4 rounded-2xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, reiciendis.
+      <div className="bg-white w-full min-h-[500px] rounded-2xl">
+        <div className="data-table-header p-7">
+          <div className="flex justify-between items-center">
+            <h2 className="text-2xl font-bold">{title}</h2>
+            <div className="data-table-header-right-section flex gap-2">
+              <div className="flex items-center border border-gray-300 rounded-md px-4 py-2 shadow-sm">
+                <input
+                  type="text"
+                  placeholder="Search"
+                  className="ml-2 outline-none border-none w-full text-gray-700 placeholder-gray-400"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+              </div>
+              <button
+                className="flex items-center border border-gray-300 rounded-md px-4 py-2 shadow-sm text-gray-700 hover:bg-gray-100"
+                onClick={exportCsv}
+              >
+                <File className="w-5 h-5 text-green-400" />
+                <span className="ml-2">Export CSV</span>
+              </button>
+            </div>
+          </div>
         </div>
+
+        <div className="relative overflow-x-auto sm:rounded-lg">
+          <table className="w-full text-sm text-left text-gray-500">
+            <thead className="text-xs text-white uppercase bg-[rgb(0,173,238)]">
+              <tr>
+                {columns.map((col) => (
+                  <th key={col.accessor} className="px-6 py-3">
+                    {col.label}
+                  </th>
+                ))}
+                <th className="px-6 py-3">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {paginatedData.map((row, rowIndex) => (
+                <tr
+                  key={rowIndex}
+                  className="bg-white border-b hover:bg-gray-50"
+                >
+                  {columns.map((col) => (
+                    <td key={col.accessor} className="px-6 py-4">
+                      {row[col.accessor]}
+                    </td>
+                  ))}
+                  <td className="px-6 py-4 flex gap-2">
+                    {onEdit && (
+                      <button
+                        className="w-4 h-4"
+                        onClick={() => onEdit(row)}
+                      >
+                        <Edit2 />
+                      </button>
+                    )}
+                    {onDelete && (
+                      <button
+                        className="w-4 h-4 text-red-700"
+                        onClick={() => onDelete(row)}
+                      >
+                        <Trash2 />
+                      </button>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Pagination Controls */}
+        <div className="flex justify-between items-center p-4">
+          <button
+            className="px-4 py-2 bg-gray-200 rounded-md"
+            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+            disabled={currentPage === 1}
+          >
+            Previous
+          </button>
+          <span>
+            Page {currentPage} of {totalPages}
+          </span>
+          <button
+            className="px-4 py-2 bg-gray-200 rounded-md"
+            onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+            disabled={currentPage === totalPages}
+          >
+            Next
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
