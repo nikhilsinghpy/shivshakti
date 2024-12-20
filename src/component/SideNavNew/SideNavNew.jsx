@@ -19,7 +19,7 @@ export const SideNavNew = () => {
 
   return (
     <div>
-      <div className="w-[270px] h-screen bg-white flex flex-col shadow-lg border-r">
+      <div className="w-[270px] h-screen bg-white flex flex-col  ">
         {/* Logo Section */}
         <div className="p-4 mb-6 flex justify-center items-center">
           <img src={siptoklogo} alt="siptoklogo" className="w-[110px]" />

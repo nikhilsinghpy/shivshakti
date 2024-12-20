@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Edit2, Trash2, File } from 'lucide-react';
+import { Edit2, Trash2, File, Search } from 'lucide-react';
 
 const DataTable = ({ 
   data, 
@@ -9,7 +9,7 @@ const DataTable = ({
   onView, 
   exportCsv, 
   title = "Table", 
-  itemsPerPage = 8 
+  itemsPerPage = 7 
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
@@ -27,13 +27,14 @@ const DataTable = ({
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
 
   return (
-    <div className="flex flex-col p-4">
+    <div className="flex flex-col ">
       <div className="bg-white w-full min-h-[500px] rounded-2xl">
         <div className="data-table-header p-7">
           <div className="flex justify-between items-center">
             <h2 className="text-2xl font-bold">{title}</h2>
             <div className="data-table-header-right-section flex gap-2">
               <div className="flex items-center border border-gray-300 rounded-md px-4 py-2 shadow-sm">
+                <Search />
                 <input
                   type="text"
                   placeholder="Search"
@@ -76,7 +77,7 @@ const DataTable = ({
                       {row[col.accessor]}
                     </td>
                   ))}
-                  <td className="px-6 py-4 flex gap-2">
+                  <td className="px-6 py-4 flex gap-2 justify-between">
                     {onEdit && (
                       <button
                         className="w-4 h-4"

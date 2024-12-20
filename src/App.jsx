@@ -15,7 +15,7 @@ function App() {
         
         {/* Protected routes */}
         <Route element={<Layout />}>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/report-setting" element={<ReportSetting />} />
           <Route path="/report/call-logs" element={<CallLogs />} />
           <Route path="/report/announcement-logs" element={<AnnoucementLogs />} />
