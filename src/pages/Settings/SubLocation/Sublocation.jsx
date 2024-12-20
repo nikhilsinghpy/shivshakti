@@ -4,20 +4,20 @@ import { RiDeleteBin5Line } from "react-icons/ri";
 import { ChevronRight } from 'lucide-react';
 import { ChevronLeft } from 'lucide-react';
 
-import "./Addrole.css";
+import "./Sublocation.css";
 
-const Addrole = () => {
+const Sublocation = () => {
     const recordings = [
-        { name: "Speaker 1", duration: "00:09:48.49" },
-        { name: "Speaker 2", duration: "00:09:48.49" },
-        { name: "Speaker 3", duration: "00:09:48.49" },
-        { name: "Speaker 4", duration: "00:09:48.49" },
-        { name: "Speaker 5", duration: "00:09:48.49" },
-        { name: "Speaker 6", duration: "00:09:48.49" },
-        { name: "Speaker 7", duration: "00:09:48.49" },
-        { name: "Speaker 8", duration: "00:09:48.49" },
-        { name: "Speaker 9", duration: "00:09:48.49" },
-        { name: "Speaker 10", duration: "00:09:48.49" },
+        { location: "Speaker 1", sublocation :"Speaker 1" , duration: "00:09:48.49" },
+        { location: "Speaker 1", sublocation :"Speaker 1" , duration: "00:09:48.49" },
+        { location: "Speaker 1", sublocation :"Speaker 1" , duration: "00:09:48.49" },
+        { location: "Speaker 1", sublocation :"Speaker 1" , duration: "00:09:48.49" },
+        { location: "Speaker 1", sublocation :"Speaker 1" , duration: "00:09:48.49" },
+        { location: "Speaker 1", sublocation :"Speaker 1" , duration: "00:09:48.49" },
+        { location: "Speaker 1", sublocation :"Speaker 1" , duration: "00:09:48.49" },
+        { location: "Speaker 1", sublocation :"Speaker 1" , duration: "00:09:48.49" },
+        { location: "Speaker 1", sublocation :"Speaker 1" , duration: "00:09:48.49" },
+       
         // Add more data as needed...
     ];
 
@@ -42,7 +42,7 @@ const Addrole = () => {
             <div className="bg-gray-100 min-h-screen p-4">
                 <div className="mx-auto p-8 bg-white shadow rounded-2xl min-h-[650px]">
                     <div className="flex justify-between items-center mb-4">
-                        <h1 className="text-2xl font-semibold">All roles</h1>
+                        <h1 className="text-2xl font-semibold">Sub Location</h1>
                         <div className="flex items-center space-x-2">
                             <input
                                 type="text"
@@ -57,7 +57,7 @@ const Addrole = () => {
                                 <span>Export csv.</span>
                             </button>
                             <button className="bg-green-500 hover:bg-blue-700 text-white font-bold py-1.5 px-8 rounded-medium focus:outline-none focus:shadow-outline" type="button">
-                                Add role
+                                Add location
                             </button>
                         </div>
                     </div>
@@ -67,7 +67,8 @@ const Addrole = () => {
                         <table className="table-fixed w-full">
                             <thead>
                                 <tr className="bg-blue-500 text-white">
-                                    <th className="w-1/2 px-4 py-2 text-left">Role name</th>
+                                    <th className="w-1/2 px-4 py-2 text-left">Location name</th>
+                                    <th className="w-1/2 px-4 py-2 text-left">Sub location</th>
                                     <th className="w-1/2 px-4 py-2 text-left">Remarks</th>
                                     <th className="w-1/4"></th>
                                 </tr>
@@ -75,8 +76,9 @@ const Addrole = () => {
                             <tbody>
                                 {currentItems.map((record, index) => (
                                     <tr key={index} className="hover:bg-gray-100 border-b border-gray-200">
-                                        <td className="px-4 py-4">{record.name}</td>
-                                        <td className="px-4 py-4">{record.duration}</td>
+                                        <td className="px-4 py-4">{record?.location}</td>
+                                        <td className="px-4 py-4">{record?.sublocation}</td>
+                                        <td className="px-4 py-4">{record?.duration}</td>
                                         <td className="px-4 py-4 flex items-center space-x-6">
                                             <button className="text-gray-500 hover:text-gray-700 text-2xl">
                                                 <CiEdit />
@@ -129,4 +131,4 @@ const Addrole = () => {
     );
 };
 
-export default Addrole;
+export default Sublocation;

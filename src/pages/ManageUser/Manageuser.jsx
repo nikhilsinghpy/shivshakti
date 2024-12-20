@@ -20,7 +20,7 @@ const Manageuser = () => {
                 </div>
 
                 {/* Card Section */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 mt-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-8">
                     {/* Card 1: Manage Password */}
                     <div className="p-4 text-center">
                         <div className="bg-white p-6 rounded-3xl shadow-md flex flex-col items-center justify-center min-h-[230px] w-60 mx-auto">

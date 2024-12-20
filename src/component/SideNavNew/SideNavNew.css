@@ -1,0 +1,47 @@
+.allmenu-list a {
+  font-size: 12px;
+  color:black;
+  display: block;
+  padding: 12px;
+  padding-left: 30px;
+  text-decoration: none;
+  -webkit-tap-highlight-color:transparent;
+}
+
+.allmenu-list a:hover {
+  color:black;
+  background: #fff;
+  outline: none;
+  position: relative;
+  background-color: #fff;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.allmenu-list a i {
+  margin-right: 5px;
+}
+
+.allmenu-list a:hover::after {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  bottom: 100%;
+  right: 0;
+  height: 35px;
+  width: 35px;
+  border-bottom-right-radius: 18px;
+  box-shadow: 0 20px 0 0 #fff;
+}
+
+.allmenu-list a:hover::before {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  top: 38px;
+  right: 0;
+  height: 105px;
+  width: 35px;
+  border-top-right-radius: 18px;
+  box-shadow: 0 -20px 0 0 #fff;
+}
