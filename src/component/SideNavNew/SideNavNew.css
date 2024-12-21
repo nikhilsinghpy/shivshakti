@@ -1,11 +1,7 @@
-.allmenu-list a {
-  font-size: 12px;
-  color:black;
-  display: block;
-  padding: 12px;
-  padding-left: 30px;
-  text-decoration: none;
-  -webkit-tap-highlight-color:transparent;
+.side-nav-item-wrapper{
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
 .side-nav-item{
     width: 90%;

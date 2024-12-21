@@ -27,7 +27,7 @@ function App() {
         {/* Protected routes */}
         <Route element={<Layout />}>
           <Route path="/" element={<Dashboard />} />
-          <Route path='/manageuser' element={<Manageuser />} />
+          <Route path='/manage-user' element={<Manageuser />} />
           <Route path='/managepassword' element={<ManagePassword />} />
           <Route path='/addrole' element={<Addrole />} />
           <Route path='/updateipaddress' element={<Updateipaddress />} />

@@ -6,13 +6,14 @@ export const IconCard = ({
   cardClass = '',
   iconClass = '',
   textClass = '',
+  contentClass='',
 }) => {
   return (
-    <div className="flex flex-wrap gap-4">
+    <div className={`flex flex-wrap gap-4 w-full ${contentClass}`}>
       {data.map((item, index) => (
         <Link to={item.to} key={index}>
-          <div className={`card-outer ${cardClass}`}>
-            <div className="card bg-white shadow-md rounded-3xl p-4 w-52 h-52 flex flex-col items-center justify-center">
+          <div className={`card-outer`}>
+            <div className={`${cardClass} card bg-white shadow-md rounded-3xl p-4 min-w-52 min-h-52 flex flex-col items-center justify-center`}>
               <div
                 className={`${item.bgColor || 'bg-blue-100'} rounded-full w-16 h-16 flex justify-center items-center`}
               >

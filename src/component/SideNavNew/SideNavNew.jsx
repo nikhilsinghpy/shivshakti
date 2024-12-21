@@ -70,8 +70,8 @@ export const SideNavNew = () => {
             {/* Settings */}
             <div className="side-nav-item-wrapper">
               <div
-                className={`side-nav-item ${active === "setting" ? "active" : ""}`}
-                onClick={() => handleClick("setting")}
+                className={`side-nav-item ${active === "settings" ? "active" : ""}`}
+                onClick={() => handleClick("settings")}
               >
                 <div className="flex items-center text-gray-600  transition-all cursor-pointer">
                   <Settings className="h-5 w-5 mr-3" />
@@ -95,9 +95,6 @@ export const SideNavNew = () => {
           </div>
         </div>
       </div>
-
-
-
     </div>
   );
 };

@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { CiEdit } from "react-icons/ci";
-import { RiDeleteBin5Line } from "react-icons/ri";
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Edit2, Trash2 } from 'lucide-react';
 import { ChevronLeft } from 'lucide-react';
 
 import "./Sublocation.css";
@@ -81,10 +79,10 @@ const Sublocation = () => {
                                         <td className="px-4 py-4">{record?.duration}</td>
                                         <td className="px-4 py-4 flex items-center space-x-6">
                                             <button className="text-gray-500 hover:text-gray-700 text-2xl">
-                                                <CiEdit />
+                                                <Edit2 />
                                             </button>
                                             <button className="text-gray-500 hover:text-gray-700 text-2xl">
-                                                <RiDeleteBin5Line />
+                                                <Trash2 />
                                             </button>
                                         </td>
                                     </tr>
