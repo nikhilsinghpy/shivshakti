@@ -15,6 +15,7 @@ import Designation from './pages/Settings/Designation/Designation';
 import { ReportSetting } from './pages/Report/ReportSetting/ReportSetting';
 import { CallLogs } from './pages/Report/CallLogs/CallLogs';
 import { AnnoucementLogs } from './pages/Report/AnnoucementLogs/AnnoucementLogs';
+import Imports from './pages/Settings/Imports/Imports';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/report-setting" element={<ReportSetting />} />
           <Route path="/report/call-logs" element={<CallLogs />} />
+          <Route path="/imports" element={<Imports />} />
         </Route>
       </Routes>
     </BrowserRouter>
