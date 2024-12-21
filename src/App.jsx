@@ -35,6 +35,7 @@ function App() {
           <Route path='/cameralist' element={<Cameralist />} />
           <Route path='/department' element={<Department />} />
           <Route path='/designation' element={<Designation />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/report-setting" element={<ReportSetting />} />
           <Route path="/report/call-logs" element={<CallLogs />} />
         </Route>

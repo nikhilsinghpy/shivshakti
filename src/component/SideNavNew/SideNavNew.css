@@ -12,10 +12,41 @@
     border-top-left-radius: 2rem;
     border-bottom-left-radius: 2rem;
     padding: 1rem 1.5rem;
+    position: relative;
+    transition: all 0.3s ease-in-out;
 }
 .side-nav-item:hover{
     background-color: #F1F2F7;
 }
 .side-nav-item.active{
     background-color: #F1F2F7;
+}
+
+.side-nav-item.active ::before,
+.side-nav-item:hover ::before
+{
+    position: absolute;
+    content: "";
+    bottom: -2rem;
+    right: 0;
+    background: transparent;
+    width: 2rem;
+    height: 2rem;
+    border-bottom-right-radius: 2.5rem;
+    box-shadow: 0.313rem 0.313rem 0px 0.313rem #F1F2F7;
+    transform: rotate(-90deg);
+    transition: all 0.3s ease-in-out;
+}
+.side-nav-item.active ::after,
+.side-nav-item:hover ::after{
+    position: absolute;
+    content: "";
+    top: -2rem;
+    right: 0;
+    background: transparent;
+    width: 2rem;
+    height: 2rem;
+    border-bottom-right-radius: 2.5rem;
+    box-shadow: 0.313rem 0.313rem 0px 0.313rem #F1F2F7;
+    transition: all 0.3s ease-in-out;
 }
