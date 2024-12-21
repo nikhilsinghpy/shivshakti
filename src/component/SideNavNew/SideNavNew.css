@@ -7,41 +7,15 @@
   text-decoration: none;
   -webkit-tap-highlight-color:transparent;
 }
-
-.allmenu-list a:hover {
-  color:black;
-  background: #fff;
-  outline: none;
-  position: relative;
-  background-color: #fff;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+.side-nav-item{
+    width: 90%;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    padding: 1rem 1.5rem;
 }
-
-.allmenu-list a i {
-  margin-right: 5px;
+.side-nav-item:hover{
+    background-color: #F1F2F7;
 }
-
-.allmenu-list a:hover::after {
-  content: "";
-  position: absolute;
-  background-color: transparent;
-  bottom: 100%;
-  right: 0;
-  height: 35px;
-  width: 35px;
-  border-bottom-right-radius: 18px;
-  box-shadow: 0 20px 0 0 #fff;
-}
-
-.allmenu-list a:hover::before {
-  content: "";
-  position: absolute;
-  background-color: transparent;
-  top: 38px;
-  right: 0;
-  height: 105px;
-  width: 35px;
-  border-top-right-radius: 18px;
-  box-shadow: 0 -20px 0 0 #fff;
+.side-nav-item.active{
+    background-color: #F1F2F7;
 }
