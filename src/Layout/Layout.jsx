@@ -6,7 +6,9 @@ export const Layout = () => {
     <div>
       <div className="flex flex-row">
         <SideNavNew />
+        <div className="flex w-full" style={{ height: "100vh"  , overflowY: "scroll"}}>
         <Outlet />
+        </div>
       </div>
     </div>
   )
