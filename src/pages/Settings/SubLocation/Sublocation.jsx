@@ -39,7 +39,9 @@ const Sublocation = () => {
     // Calculate total pages
     const totalPages = Math.ceil(recordings.length / itemsPerPage);
 
-
+    const handleFormSubmit = (formData) => {
+        console.log('Form Data submitted:', formData);
+    };
 
     return (
         <div>
@@ -140,7 +142,7 @@ const Sublocation = () => {
                 {/* <p className="text-gray-700">
                     This is a reusable popup dialog. You can pass dynamic content here as children.
                 </p> */}
-                <Forms/>
+                <Forms onSubmitForm={handleFormSubmit}/>
             </PopupDialog>
         </div>
     );

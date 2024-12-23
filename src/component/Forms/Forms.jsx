@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Forms = () => {
+const Forms = ({onSubmitForm}) => {
     const [formData, setFormData] = useState({
         name: "",
         password: "",
@@ -16,7 +16,7 @@ const Forms = () => {
 
     const onHandleSubmit = (e) => {
         e.preventDefault();
-        console.log(formData);
+        onSubmitForm(formData)
     };
 
     return (
