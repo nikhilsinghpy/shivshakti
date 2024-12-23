@@ -1,4 +1,5 @@
 
+import { BottomNav } from '../../component/BottomNav/BottomNav'
 import TabComponent from '../../component/TabComponent/TabComponent'
 import './dashboard.css'
 import { Home, Volume2, Mic, Calendar, MapPin } from 'lucide-react'
@@ -45,6 +46,7 @@ export const Dashboard = () => {
   return (
     <>
       <TabComponent navItems={navItems} />
+      <BottomNav />
     </>
   )
 }
