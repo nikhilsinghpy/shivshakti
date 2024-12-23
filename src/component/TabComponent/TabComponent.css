@@ -16,13 +16,14 @@
     left: 0%;
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
+    transition: all .3s ease-in-out;
 
 }
 .tab-button-backg::before{
     position: absolute;
     content: "";
-    bottom: 17%;
-    right: -23%;
+    bottom: 20%;
+    right: -18%;
     background: transparent;
     width: 2rem;
     height: 2rem;
@@ -31,7 +32,24 @@
     box-shadow: 0.313rem 0.313rem 0px 0.313rem #ffff;
     transition: all 0.3s ease-in-out;
 }
+.tab-button-backg::after{
+    position: absolute;
+    content: "";
+    bottom: 20%;
+    left: -18%;
+    background: transparent;
+    width: 2rem;
+    height: 2rem;
+    /* transform: rotate(90deg); */
+    border-bottom-right-radius: 2.5rem;
+    box-shadow: 0.313rem 0.313rem 0px 0.313rem #ffff;
+    transition: all 0.3s ease-in-out;
+}
+
 .tab-card{
     z-index: 100;
     position: relative;
+}
+.tab-button-backg.hide-after::after {
+    content: none;
 }

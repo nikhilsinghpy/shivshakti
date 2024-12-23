@@ -45,7 +45,7 @@ export const SideNavNew = () => {
             <div className="side-nav-item-wrapper">
               <div
                 className={`side-nav-item ${active === "manage-user" ? "active" : ""}`}
-                onClick={() => handleClick("manageuser")}
+                onClick={() => handleClick("manage-user")}
               >
                 <div className="flex items-center text-gray-600  transition-all cursor-pointer">
                   <Users className="h-5 w-5 mr-3" />

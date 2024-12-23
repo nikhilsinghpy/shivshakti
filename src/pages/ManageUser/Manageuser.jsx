@@ -6,14 +6,14 @@ import { IconCard } from '../../component/cards/IconCard';
 const cardData = [
     {
         id: 1,
-        to: "/managepassword",
+        to: "/manage-password",
         icon: Key,
         title: "Manage password",
         bgColor: "bg-blue-100",
     },
     {
         id: 2,
-        to: "/accessrights",
+        to: "/access-rights",
         icon: UserCog,
         title: "Access rights",
         bgColor: "bg-blue-100",
@@ -49,7 +49,7 @@ const Manageuser = () => {
 
                 {/* Card Section */}
                 <div className='w-full mt-5 flex justify-center items-center'>
-                    <IconCard data={cardData} contentClass='justify-center items-center'  cardClass='w-60 h-60' />
+                    <IconCard data={cardData} contentClass='justify-center items-center'  cardClass='w-[280px] h-[250px]' />
                 </div>
             </div>
 

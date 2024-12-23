@@ -7,14 +7,14 @@ const Settings = () => {
     const cardData = [
         {
             id: 1,
-            to: "/managepassword",
+            to: "/manage-password",
             icon: Key,
             title: "Manage password",
             bgColor: "bg-blue-100",
         },
         {
             id: 2,
-            to: "/accessrights",
+            to: "/access-rights",
             icon: UserCog,
             title: "Access rights",
             bgColor: "bg-blue-100",
@@ -35,7 +35,7 @@ const Settings = () => {
         },
         {
             id: 5,
-            to: "/addrole",
+            to: "/imports",
             icon: IdCard,
             title: "Imports",
             bgColor: "bg-blue-100",

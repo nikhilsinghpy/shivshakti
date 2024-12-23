@@ -3,8 +3,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout/Layout';
 import Manageuser from './pages/ManageUser/Manageuser';
 import ManagePassword from './pages/ManageUser/ManagePassword/ManagePassword';
-import Accessrights from './pages/ManageUser/AccessRights/Accessrights';
-import Addrole from './pages/ManageUser/AddRole/Addrole';
 import Updateipaddress from './pages/ManageUser/UpdateIpAddress/Updateipaddress';
 import { Dashboard } from './pages/Dashboard/Dashboard';
 import Settings from './pages/Settings/Settings';
@@ -16,6 +14,8 @@ import { ReportSetting } from './pages/Report/ReportSetting/ReportSetting';
 import { CallLogs } from './pages/Report/CallLogs/CallLogs';
 import { AnnoucementLogs } from './pages/Report/AnnoucementLogs/AnnoucementLogs';
 import Imports from './pages/Settings/Imports/Imports';
+import { Accessrights } from './pages/ManageUser/AccessRights/Accessrights';
+import { Addrole } from './pages/ManageUser/AddRole/Addrole';
 
 
 function App() {
@@ -28,7 +28,8 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<Dashboard />} />
           <Route path='/manage-user' element={<Manageuser />} />
-          <Route path='/managepassword' element={<ManagePassword />} />
+          <Route path='/manage-password' element={<ManagePassword />} />
+          <Route path='/access-rights' element={<Accessrights />} />
           <Route path='/addrole' element={<Addrole />} />
           <Route path='/updateipaddress' element={<Updateipaddress />} />
           <Route path='/settings' element={<Settings />} />
@@ -39,6 +40,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/report-setting" element={<ReportSetting />} />
           <Route path="/report/call-logs" element={<CallLogs />} />
+          <Route path="/report/announcement-logs" element={<AnnoucementLogs />} />
           <Route path="/imports" element={<Imports />} />
         </Route>
       </Routes>
