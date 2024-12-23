@@ -4,7 +4,7 @@ const Imports = () => {
     const [activeTab, setActiveTab] = useState("distinct");
 
     return (
-        <div className="min-w-[1110px] p-6 bg-white shadow rounded-3xl m-3">
+        <div className="w-full p-6 bg-white shadow rounded-3xl m-3">
             {/* Header */}
             <h1 className="text-xl font-semibold mb-6">Upload employee details</h1>
 
@@ -39,7 +39,7 @@ const Imports = () => {
             <div className="flex items-center justify-between mb-6 relative">
                 {/* Background Indicator */}
                 <div
-                    className={`side-n absolute h-[70px] w-[320px] bg-gray-100 rounded-full transition-all duration-300 mt-4 ${activeTab === "distinct" ? "left-0 active" : "left-30 active"}`}
+                    className={`side-n absolute h-[100px] w-[220px] bg-gray-100  transition-all duration-300 mt-4 ${activeTab === "distinct" ? "left-0 active" : "left-30 active"}`}
                     style={{
                         left: activeTab === "distinct" ? "0px" : "200px", // Replace "120px" with your desired pixel value
                         zIndex: 1, // Lower z-index to ensure it's behind
