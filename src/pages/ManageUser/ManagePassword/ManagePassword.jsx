@@ -16,8 +16,8 @@ const ManagePassword = () => {
         <div>
             <div className="bg-gray-100 min-h-screen p-4 flex">
                 <div className="w-1/2 text-white">
-                    <div className="w-full max-w-xs">
-                        <form className="bg-white shadow-md rounded-2xl px-8 pt-10 pb-12 mb-4 w-[600px] min-h-[590px]">
+                    <div className="max-w-xs">
+                        <form className="bg-white shadow-md rounded-2xl px-8 pt-10 pb-12 mb-4 w-[520px] min-h-[590px]">
                             <div className="mb-4 w-full">
                                 <label className="block text-gray-500 text-lg font-bold mb-2" for="username">
                                     User name

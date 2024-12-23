@@ -3,19 +3,23 @@ import { ChevronRight, Edit2, Trash2 } from 'lucide-react';
 import { ChevronLeft } from 'lucide-react';
 
 import "./Sublocation.css";
+import PopupDialog from '../../../component/PopupDialog/PopupDialog ';
+import Forms from '../../../component/Forms/Forms';
 
 const Sublocation = () => {
+    const [isDialogOpen, setIsDialogOpen] = useState(false);
+
     const recordings = [
-        { location: "Speaker 1", sublocation :"Speaker 1" , duration: "00:09:48.49" },
-        { location: "Speaker 1", sublocation :"Speaker 1" , duration: "00:09:48.49" },
-        { location: "Speaker 1", sublocation :"Speaker 1" , duration: "00:09:48.49" },
-        { location: "Speaker 1", sublocation :"Speaker 1" , duration: "00:09:48.49" },
-        { location: "Speaker 1", sublocation :"Speaker 1" , duration: "00:09:48.49" },
-        { location: "Speaker 1", sublocation :"Speaker 1" , duration: "00:09:48.49" },
-        { location: "Speaker 1", sublocation :"Speaker 1" , duration: "00:09:48.49" },
-        { location: "Speaker 1", sublocation :"Speaker 1" , duration: "00:09:48.49" },
-        { location: "Speaker 1", sublocation :"Speaker 1" , duration: "00:09:48.49" },
-       
+        { location: "Speaker 1", sublocation: "Speaker 1", duration: "00:09:48.49" },
+        { location: "Speaker 1", sublocation: "Speaker 1", duration: "00:09:48.49" },
+        { location: "Speaker 1", sublocation: "Speaker 1", duration: "00:09:48.49" },
+        { location: "Speaker 1", sublocation: "Speaker 1", duration: "00:09:48.49" },
+        { location: "Speaker 1", sublocation: "Speaker 1", duration: "00:09:48.49" },
+        { location: "Speaker 1", sublocation: "Speaker 1", duration: "00:09:48.49" },
+        { location: "Speaker 1", sublocation: "Speaker 1", duration: "00:09:48.49" },
+        { location: "Speaker 1", sublocation: "Speaker 1", duration: "00:09:48.49" },
+        { location: "Speaker 1", sublocation: "Speaker 1", duration: "00:09:48.49" },
+
         // Add more data as needed...
     ];
 
@@ -34,6 +38,8 @@ const Sublocation = () => {
 
     // Calculate total pages
     const totalPages = Math.ceil(recordings.length / itemsPerPage);
+
+
 
     return (
         <div>
@@ -54,7 +60,7 @@ const Sublocation = () => {
                                 />
                                 <span>Export csv.</span>
                             </button>
-                            <button className="bg-green-500 hover:bg-blue-700 text-white font-bold py-1.5 px-8 rounded-medium focus:outline-none focus:shadow-outline" type="button">
+                            <button className="bg-green-500 hover:bg-blue-700 text-white font-bold py-1.5 px-8 rounded-medium focus:outline-none focus:shadow-outline" type="button" onClick={() => setIsDialogOpen(true)}>
                                 Add location
                             </button>
                         </div>
@@ -102,7 +108,7 @@ const Sublocation = () => {
                                 onClick={() => handlePageChange(currentPage - 1)}
                                 disabled={currentPage === 1}
                             >
-                                <ChevronLeft/>
+                                <ChevronLeft />
                             </button>
                             {[...Array(totalPages)].map((_, index) => (
                                 <button
@@ -118,13 +124,24 @@ const Sublocation = () => {
                                 onClick={() => handlePageChange(currentPage + 1)}
                                 disabled={currentPage === totalPages}
                             >
-                                <ChevronRight/>
+                                <ChevronRight />
                             </button>
                         </div>
                     </div>
 
                 </div>
             </div>
+
+            <PopupDialog
+                isOpen={isDialogOpen}
+                onClose={() => setIsDialogOpen(false)}
+                title="Add Location"
+            >
+                {/* <p className="text-gray-700">
+                    This is a reusable popup dialog. You can pass dynamic content here as children.
+                </p> */}
+                <Forms/>
+            </PopupDialog>
         </div>
     );
 };

@@ -9,7 +9,7 @@ export const IconCard = ({
   contentClass='',
 }) => {
   return (
-    <div className={`flex flex-wrap gap-4 w-full ${contentClass}`}>
+    <div className={`flex flex-wrap gap-7 w-full ${contentClass}`}>
       {data.map((item, index) => (
         <Link to={item.to} key={index}>
           <div className={`card-outer`}>

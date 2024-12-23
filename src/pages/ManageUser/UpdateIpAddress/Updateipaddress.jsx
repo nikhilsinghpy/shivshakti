@@ -3,8 +3,8 @@ import "./Updateipaddress.css"
 const Updateipaddress = () => {
     return (
         <div>
-            <div className="w-full mx-auto">
-                <form className="bg-white shadow-md rounded-2xl px-8 pt-10 pb-12 m-4 min-h-[585px]">
+            <div className="min-w-[1130px] mx-auto">
+                <form className="bg-white shadow-md rounded-2xl px-8 pt-10 pb-12 m-4 min-h-[650px]">
                     <div className="mb-4 w-full">
                         <label className="block text-gray-500 text-lg font-bold mb-2" for="Old IP Address">
                             Old IP Address
