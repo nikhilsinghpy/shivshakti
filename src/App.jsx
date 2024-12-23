@@ -17,6 +17,8 @@ import Imports from './pages/Settings/Imports/Imports';
 import { Accessrights } from './pages/ManageUser/AccessRights/Accessrights';
 import { Addrole } from './pages/ManageUser/AddRole/Addrole';
 import Forms from './component/Forms/Forms';
+import { Location } from './pages/Settings/location/Location';
+import { MobileDevices } from './pages/Settings/MobileDevices/MobileDevices';
 
 
 function App() {
@@ -34,10 +36,12 @@ function App() {
           <Route path='/addrole' element={<Addrole />} />
           <Route path='/updateipaddress' element={<Updateipaddress />} />
           <Route path='/settings' element={<Settings />} />
-          <Route path='/sublocation' element={<Sublocation />} />
-          <Route path='/cameralist' element={<Cameralist />} />
+          <Route path='/location' element={<Location />} />
+          <Route path='/sub-location' element={<Sublocation />} />
+          <Route path='/camera-list' element={<Cameralist />} />
           <Route path='/department' element={<Department />} />
           <Route path='/designation' element={<Designation />} />
+          <Route path='/mobile-devices' element={<MobileDevices />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/report-setting" element={<ReportSetting />} />
           <Route path="/report/call-logs" element={<CallLogs />} />

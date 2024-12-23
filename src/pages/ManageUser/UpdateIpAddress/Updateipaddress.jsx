@@ -1,55 +1,68 @@
 import React from 'react'
 import "./Updateipaddress.css"
+import Breadcrumb from '../../../component/Breadcrumb/Breadcrumb'
 const Updateipaddress = () => {
+    const breadcrumbItems = [
+        { label: 'Manage user', link: '/manage-user' },
+        { label: 'Update IP address', link: '/manage-user/update-ip-address' },
+      ]
     return (
-        <div>
-            <div className="min-w-[1130px] mx-auto">
-                <form className="bg-white shadow-md rounded-2xl px-8 pt-10 pb-12 m-4 min-h-[650px]">
-                    <div className="mb-4 w-full">
-                        <label className="block text-gray-500 text-lg font-bold mb-2" for="Old IP Address">
-                            Old IP Address
-                        </label>
-                        <input
-                            className="appearance-none border rounded w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="Old IP Address"
-                            type="text"
-                            placeholder="Old IP Address"
-                        />
-                    </div>
-                    <div className="mb-4 w-full">
-                        <label className="block text-gray-500 text-lg font-bold mb-2" for="Old IP Address">
-                            New IP Address
-                        </label>
-                        <input
-                            className="appearance-none border rounded w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="New IP Address"
-                            type="texx"
-                            placeholder="New IP Address"
-                        />
-                    </div>
-                    <div className="mb-4 w-full">
-                        <label className="block text-gray-500 text-lg font-bold mb-2" for="Confirm IP Address">
-                            Confirm IP Address
-                        </label>
-                        <input
-                            className="appearance-none border rounded w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="Confirm IP Address"
-                            type="text"
-                            placeholder="Confirm IP Address"
-                        />
-                    </div>
-                
-
-                    <div className="flex items-center justify-center mt-12">
-                        <button className="bg-green-500 hover:bg-blue-700 text-white font-bold py-3 px-10 rounded-medium focus:outline-none focus:shadow-outline" type="button">
-                            Change Password
-                        </button>
-                    </div>
-                </form>
-
-
+        <div className="w-full p-5">
+        <Breadcrumb items={breadcrumbItems}/>
+      <div className="bg-gray-100 mt-5 flex w-full justify-between gap-4 h-[70vh]">
+        <div className="bg-white rounded-3xl p-8 w-full ">
+          <form>
+            <div className="mb-4">
+              <label
+                className="block text-sm font-medium text-gray-700 mb-1"
+                htmlFor="oldIpAddress"
+              >
+                Old IP Address
+              </label>
+              <input
+                type="text"
+                id="oldIpAddress"
+                className="w-full px-4 py-2 border rounded-md focus:ring focus:ring-blue-200 focus:outline-none"
+              />
             </div>
+            <div className="mb-4">
+              <label
+                className="block text-sm font-medium text-gray-700 mb-1"
+                htmlFor="newIpAddress"
+              >
+                New IP password
+              </label>
+              <input
+                type="password"
+                id="newIpAddress"
+                className="w-full px-4 py-2 border rounded-md focus:ring focus:ring-blue-200 focus:outline-none"
+              />
+            </div>
+            <div className="mb-4">
+              <label
+                className="block text-sm font-medium text-gray-700 mb-1"
+                htmlFor="confirmIpAddress"
+              >
+                Confirm IP Address
+              </label>
+              <input
+                type="password"
+                id="confirmIpAddress"
+                className="w-full px-4 py-2 border rounded-md focus:ring focus:ring-blue-200 focus:outline-none"
+              />
+            </div>
+            <div className='flex justify-center items-center h-[30vh]'>
+              <button
+                type="submit"
+                className="w-[200px] px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:ring focus:ring-green-200 focus:outline-none"
+              >
+                Change password
+              </button>
+            </div>
+          </form>
         </div>
+      </div>
+    </div>
     )
 }
 

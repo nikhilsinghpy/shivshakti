@@ -34,7 +34,7 @@ export const Addrole = () => {
         exportCsv={handleExportCsv}
         title="Add Role"
         customButton={{
-          label: 'Click Me',
+          label: 'Add role',
           onClick: handleButtonClick,
         }}
       />

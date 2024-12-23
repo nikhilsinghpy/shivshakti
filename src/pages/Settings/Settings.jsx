@@ -1,60 +1,62 @@
 import React from 'react';
 import "./Settings.css";
-import { Key, UserCog, Server, IdCard } from "lucide-react";
+import { MapPin, Map, Camera, Building2, Users, UploadCloud, Smartphone } from "lucide-react";
 import { IconCard } from '../../component/cards/IconCard';
 
 const Settings = () => {
+
     const cardData = [
         {
             id: 1,
-            to: "/manage-password",
-            icon: Key,
-            title: "Manage password",
+            to: "/location",
+            icon: MapPin, // Icon for "Location"
+            title: "Location",
             bgColor: "bg-blue-100",
         },
         {
             id: 2,
-            to: "/access-rights",
-            icon: UserCog,
-            title: "Access rights",
+            to: "/sub-location",
+            icon: Map, // Icon for "Sub-location"
+            title: "Sub-location",
             bgColor: "bg-blue-100",
         },
         {
             id: 3,
-            to: "/addrole",
-            icon: IdCard,
-            title: "Add role",
+            to: "/camera-list",
+            icon: Camera, // Icon for "Camera list"
+            title: "Camera list",
             bgColor: "bg-blue-100",
         },
         {
             id: 4,
-            to: "/updateipaddress",
-            icon: Server,
-            title: "Update IP address",
+            to: "/department",
+            icon: Building2, // Icon for "Department"
+            title: "Department",
             bgColor: "bg-blue-100",
         },
         {
             id: 5,
-            to: "/imports",
-            icon: IdCard,
-            title: "Imports",
+            to: "/designation",
+            icon: Users, // Icon for "Designation"
+            title: "Designation",
             bgColor: "bg-blue-100",
         },
         {
             id: 6,
-            to: "/updateipaddress",
-            icon: Server,
-            title: "Mobile Devices",
+            to: "/imports",
+            icon: UploadCloud, // Icon for "Import"
+            title: "Import",
             bgColor: "bg-blue-100",
         },
         {
             id: 7,
-            to: "/updateipaddress",
-            icon: Server,
+            to: "/mobile-devices",
+            icon: Smartphone, // Icon for "Mobile Devices"
             title: "Mobile Devices",
             bgColor: "bg-blue-100",
         },
     ];
+    
     
 
     return (
