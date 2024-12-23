@@ -16,6 +16,7 @@ import { AnnoucementLogs } from './pages/Report/AnnoucementLogs/AnnoucementLogs'
 import Imports from './pages/Settings/Imports/Imports';
 import { Accessrights } from './pages/ManageUser/AccessRights/Accessrights';
 import { Addrole } from './pages/ManageUser/AddRole/Addrole';
+import Forms from './component/Forms/Forms';
 
 
 function App() {
@@ -42,6 +43,8 @@ function App() {
           <Route path="/report/call-logs" element={<CallLogs />} />
           <Route path="/report/announcement-logs" element={<AnnoucementLogs />} />
           <Route path="/imports" element={<Imports />} />
+          <Route path="/annoucementLogs" element={<AnnoucementLogs />} />
+          <Route path="/forms" element={<Forms />} />
         </Route>
       </Routes>
     </BrowserRouter>

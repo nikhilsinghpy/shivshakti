@@ -47,6 +47,13 @@ const Settings = () => {
             title: "Mobile Devices",
             bgColor: "bg-blue-100",
         },
+        {
+            id: 7,
+            to: "/updateipaddress",
+            icon: Server,
+            title: "Mobile Devices",
+            bgColor: "bg-blue-100",
+        },
     ];
     
 
@@ -54,7 +61,7 @@ const Settings = () => {
         <div>
             <div className="bg-gray-100 min-h-screen p-4">
                 {/* Card Section */}
-                <IconCard data={cardData} />
+                <IconCard data={cardData} contentClass=' ' cardClass='w-10 h-40' />
             </div>
         </div>
     );
