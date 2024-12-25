@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Forms = ({ onSubmitForm, formFields }) => {
+const BigForms = ({ onSubmitForm, formFields }) => {
     const [formData, setFormData] = useState(
         formFields.reduce((acc, field) => {
             acc[field.name] = "";
@@ -22,19 +22,17 @@ const Forms = ({ onSubmitForm, formFields }) => {
     };
     return (
         <div>
-            <form
-                className="bg-white"
-                onSubmit={onHandleSubmit}
-            >
-                {
-                    formFields.map((item, index) => (
-                        (
-                            <div className="mb-4 w-full" key={index}>
-                                <label className="block text-gray-500 text-lg font-bold mb-2" htmlFor={item.id}>
+            <form className="w-[900px] p-8 bg-white rounded-lg" onSubmit={onHandleSubmit}>
+                <div className="flex flex-wrap -mx-4">
+
+                    {
+                        formFields.map((item, index) => (
+                            <div className="w-full md:w-1/2 px-4 mb-6" key={index}>
+                                <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor={item.id}>
                                     {item.label}
                                 </label>
                                 <input
-                                    className="appearance-none border rounded w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    className="w-full border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50 px-3 py-3"
                                     id={item.id}
                                     name={item.name}
                                     type={item.type}
@@ -42,22 +40,23 @@ const Forms = ({ onSubmitForm, formFields }) => {
                                     onChange={handleInput}
                                 />
                             </div>
+                        ))
+                    }
 
-                        )
-                    ))
-                }
+                </div>
 
                 <div className="flex items-center justify-center mt-12">
                     <button
-                        className="bg-green-500 hover:bg-blue-700 text-white font-bold py-3 px-10 rounded-medium focus:outline-none focus:shadow-outline"
-                        type="submit" // Use type="submit" to trigger the form submit
+                        className="bg-green-500 hover:bg-blue-700 text-white font-bold py-4 px-12 rounded-medium focus:outline-none focus:shadow-outline"
+                        type="submit"
                     >
                         Submit
                     </button>
                 </div>
             </form>
+
         </div>
     );
 };
 
-export default Forms;
+export default BigForms;

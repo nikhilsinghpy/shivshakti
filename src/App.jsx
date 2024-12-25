@@ -19,6 +19,7 @@ import { Addrole } from './pages/ManageUser/AddRole/Addrole';
 import Forms from './component/Forms/Forms';
 import { Location } from './pages/Settings/location/Location';
 import { MobileDevices } from './pages/Settings/MobileDevices/MobileDevices';
+import BigForms from './component/Forms/BigForms';
 
 
 function App() {
@@ -48,7 +49,7 @@ function App() {
           <Route path="/report/announcement-logs" element={<AnnoucementLogs />} />
           <Route path="/imports" element={<Imports />} />
           <Route path="/annoucementLogs" element={<AnnoucementLogs />} />
-          <Route path="/forms" element={<Forms />} />
+          <Route path="/forms" element={<BigForms />} />
         </Route>
       </Routes>
     </BrowserRouter>

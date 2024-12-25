@@ -23,13 +23,19 @@ const Sublocation = () => {
   const handleDelete = (row) => console.log('Delete:', row)
   const handleExportCsv = () => console.log('Exporting CSV...')
   const handleView = () => console.log('Exporting CSV...')
+
   const handleButtonClick = () => {
-    alert('Button clicked!')
+    setIsDialogOpen(true);
   }
 
   const breadcrumditem = [
     { label: 'Settings', link: '/settings' },
     { label: ' Sub-location' },
+  ]
+  const formFields = [
+    { label: 'Select speaker group', type: 'text', id: 'speaker', name: 'speaker' },
+    { label: 'Sub location Name', type: 'text', id: 'subocation', name: 'sublocation' },
+    { label: 'Remark', type: 'text', id: 'remark', name: 'remark' }
   ]
 
   return (
@@ -54,11 +60,10 @@ const Sublocation = () => {
         isOpen={isDialogOpen}
         onClose={() => setIsDialogOpen(false)}
         title="Add Location"
+        height="520px"
+        width="600px"
       >
-        {/* <p className="text-gray-700">
-                    This is a reusable popup dialog. You can pass dynamic content here as children.
-                </p> */}
-        <Forms onSubmitForm={handleFormSubmit} />
+        <Forms onSubmitForm={handleFormSubmit} formFields={formFields} />
       </PopupDialog>
     </div>
   )
