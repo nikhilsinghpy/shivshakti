@@ -18,6 +18,7 @@ const TabComponent = ({ navItems, tabContents }) => {
       bg.style.left = `${offsetLeft - 7.5}px`;
       bg.style.width = `${offsetWidth + 15}px`;
       bg.classList.toggle("hide-after", activeIndex === 0);
+      bg.classList.toggle("hide-before", activeIndex === 4);
     }
   }, [activeIndex]);
 
@@ -25,7 +26,7 @@ const TabComponent = ({ navItems, tabContents }) => {
     <>
       <div className="p-5 w-full">
         <div className="tab-wrap relative">
-          <nav className="flex mt-5 items-center justify-start gap-4 px-[7px]">
+          <nav className="flex mt-5 items-center justify-between px-[7px] w-full">
             {navItems.map((item, index) => (
               <button
                 key={index}

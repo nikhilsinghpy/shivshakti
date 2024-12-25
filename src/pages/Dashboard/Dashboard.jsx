@@ -4,6 +4,11 @@ import './dashboard.css'
 import { Home, Volume2, Mic, Calendar, MapPin } from 'lucide-react'
 import { Doughnut } from 'react-chartjs-2'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
+import { HomeTab } from './home/HomeTab'
+import { Speaker } from './speaker/Speaker'
+import { Announcers } from './Announcers/Announcers'
+import { Schedule } from './Schedule/Schedule'
+import { Zones } from './Zones/Zones'
 
 // Register required Chart.js components
 ChartJS.register(ArcElement, Tooltip, Legend)
@@ -36,22 +41,25 @@ export const Dashboard = () => {
   }
 
   const tabContents = [
-    <div>Welcome to the Home tab!</div>,
-    <div>This is your Profile tab.</div>,
-    <div>Here are your Settings.</div>,
+    <HomeTab/>,
+    <Speaker/>,
+    <Announcers/>,
+    <Schedule/>,
+    <Zones/>
   ]
 
   const percentageUsed = 50 // Storage used in percentage
   const percentageAvailable = 100 - percentageUsed
   return (
     <>
-      <div className="flex w-full min-h-screen gap-4">
-        <div className="w-2/3 ">
+      <div className="flex w-full min-h-screen gap-2">
+        {/* Left Section - 70% width */}
+        <div className="w-[75%]">
           <TabComponent navItems={navItems} tabContents={tabContents} />
         </div>
 
-        {/* Right Section */}
-        <div className="w-1/3 h-screen overflow-y-auto">
+        {/* Right Section - 30% width */}
+        <div className="w-[25%] h-screen overflow-y-auto">
           <div className="flex flex-col items-center p-4 h-full">
             {/* Time Card */}
             <div className="w-full p-4 bg-[#292D32] rounded-2xl text-white flex justify-center items-center gap-3">
@@ -81,76 +89,64 @@ export const Dashboard = () => {
                     </span>
                   </div>
                 </div>
-                <div className="w-28 h-28">
+                <div className="w-28 h-28" style={{backdropFilter: "box-shadow(0px 0px 10px rgba(0, 0, 0, 0.1))"}}>
                   <Doughnut data={data} options={options} />
                 </div>
               </div>
             </div>
-
-            {/* CPU and Memory Card */}
-            <div className="p-4 bg-white rounded-lg shadow-md mt-6 w-full">
-              <h2 className="text-base font-bold text-gray-800 mb-3">
-                CPU Ram usage
-              </h2>
-
-              <div className="text-sm text-gray-600 space-y-1">
-                <p>
-                  <span className="font-semibold">CPU info:</span> 11th gen
-                  Intel (R) Core (TM) i5-1135G7 @ 2.4
-                </p>
-                <p>
-                  <span className="font-semibold">Uptime:</span> 11 minutes
-                </p>
-                <p>
-                  <span className="font-semibold">CPU speed:</span> 2,419.20 MHz
-                </p>
-              </div>
-
-              <hr className="my-3 border-gray-300" />
-
-              <h3 className="text-sm font-semibold text-gray-700 mb-2">
-                Memory usage:
-              </h3>
-
-              {/* CPU Progress */}
-              <div className="mb-3">
-                <div className="flex justify-between text-sm text-gray-600 mb-1">
-                  <span>CPU</span>
-                  <span>7%</span>
+            <div className="p-3 bg-white rounded-2xl mt-6 w-full">
+              <h4 className="text-lg font-bold text-gray-500">CPU Ram usage</h4>
+              <div className="w-full mt-3">
+                <div className="flex justify-start gap-2 mb-2 ">
+                  <span className="w-[100px] text-gray-500 text-xs ">
+                    CPU info :
+                  </span>
+                  <span className=" text-gray-400 text-xs ">
+                    11th gen Intel (R) Core (TM) i5-1135G7 @ 2.40GHz
+                  </span>
                 </div>
-                <div className="w-full bg-gray-200 h-2 rounded-full">
-                  <div
-                    className="bg-blue-500 h-2 rounded-full"
-                    style={{ width: '7%' }}
-                  ></div>
+                <div className="flex justify-start mb-2 ">
+                  <span className="w-[100px] text-gray-500 text-xs ">
+                    Uptime :
+                  </span>
+                  <span className=" text-gray-400 text-xs ">11 minutes</span>
+                </div>
+                <div className="flex justify-start ">
+                  <span className="w-[100px] text-gray-500 text-xs ">
+                    CPU speed :
+                  </span>
+                  <span className=" text-gray-400 text-xs ">2,418.20 MHz</span>
                 </div>
               </div>
-
-              {/* RAM Progress */}
-              <div className="mb-3">
-                <div className="flex justify-between text-sm text-gray-600 mb-1">
-                  <span>RAM</span>
-                  <span>7% | 12,038.44 mb</span>
+              <hr class="my-5"></hr>
+              <h3 className="text-lg font-bold text-gray-400">Memory usage</h3>
+              <div className="w-full mt-3">
+                <div className="flex justify-start gap-2 mb-5">
+                  <span className="w-[100px] text-gray-500 text-xs ">CPU</span>
+                  <div className="flex flex-col gap-1 w-full">
+                    <div className=" bg-gray-50 w-full  h-3 rounded-[12px] overflow-hidden">
+                      <div className="bg-[#00ADEE] w-[20%]  rounded-[8px] h-full"></div>
+                    </div>
+                    <span className=" text-gray-400 text-xs ">7%</span>
+                  </div>
                 </div>
-                <div className="w-full bg-gray-200 h-2 rounded-full">
-                  <div
-                    className="bg-green-500 h-2 rounded-full"
-                    style={{ width: '7%' }}
-                  ></div>
+                <div className="flex justify-start gap-2 mb-5">
+                  <span className="w-[100px] text-gray-500 text-xs ">RAM</span>
+                  <div className="flex flex-col gap-1 w-full">
+                    <div className=" bg-gray-50 w-full rounded-[12px] h-3 overflow-hidden">
+                      <div className="bg-green-500 w-[10%] rounded-[8px] h-full "></div>
+                    </div>
+                    <span className=" text-gray-400 text-xs ">7% | 12,038.44 mb</span>
+                  </div>
                 </div>
-              </div>
-
-              {/* SWAP Progress */}
-              <div>
-                <div className="flex justify-between text-sm text-gray-600 mb-1">
-                  <span>SWAP</span>
-                  <span>3% | 5,251.00 mb</span>
-                </div>
-                <div className="w-full bg-gray-200 h-2 rounded-full">
-                  <div
-                    className="bg-yellow-500 h-2 rounded-full"
-                    style={{ width: '3%' }}
-                  ></div>
+                <div className="flex justify-start gap-2 mb-5 w-full">
+                  <span className="w-[100px] text-gray-500 text-xs ">SWAP</span>
+                  <div className="flex flex-col gap-1 w-full">
+                    <div className=" bg-gray-50 w-full  rounded-[12px] overflow-hidden h-3">
+                      <div className="bg-yellow-500 w-[10%]  rounded-[8px] h-full"></div>
+                    </div>
+                    <span className=" text-gray-400 text-xs ">3% | 5,251.00 mb</span>
+                  </div>
                 </div>
               </div>
             </div>

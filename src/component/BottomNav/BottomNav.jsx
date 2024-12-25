@@ -12,10 +12,10 @@ import {
 export const BottomNav = () => {
   return (
     <div
-      className="fixed bottom-5 left-50 w-[600px] bg-gray-800 shadow-lg rounded-lg"
+      className="fixed bottom-5 left-50 w-[600px] bg-gray-800 shadow-lg rounded-2xl "
       style={{ zIndex: 600, right: "25%" }}
     >
-      <div className="flex justify-around items-center py-2 px-3">
+      <div className="flex justify-around items-center p-4 px-3">
         {/* Hang up */}
         <div className="flex flex-col items-center">
           <button className="bg-red-500 text-white p-2 rounded-full hover:bg-red-600">

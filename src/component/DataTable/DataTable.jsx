@@ -11,6 +11,7 @@ const DataTable = ({
   title = 'Table',
   itemsPerPage = 7,
   customButton,
+  searchbarclass = '',
 }) => {
   const [currentPage, setCurrentPage] = useState(1)
   const [searchQuery, setSearchQuery] = useState('')
@@ -54,10 +55,10 @@ const DataTable = ({
         {/* Header */}
         <div className="data-table-header p-7">
           <div className="flex justify-between items-center gap-4">
-            <h2 className="text-2xl font-bold">{title}</h2>
+            <h2 className="text-lg font-bold text-gray-500">{title}</h2>
             <div className="data-table-header-right-section flex gap-2">
               {/* Search Input */}
-              <div className="flex items-center border border-gray-300 rounded-md px-4 py-2 shadow-sm">
+              <div className={`${searchbarclass} flex items-center border border-gray-300 rounded-md px-4 py-2 `}>
                 <Search />
                 <input
                   type="text"
@@ -69,7 +70,7 @@ const DataTable = ({
               </div>
               {/* Export CSV Button */}
               <button
-                className="flex items-center border border-gray-300 rounded-md px-4 py-2 shadow-sm text-gray-700 hover:bg-gray-100"
+                className="flex items-center text-sm border border-gray-300 rounded-md px-4 py-2 shadow-sm text-gray-400 hover:bg-gray-100"
                 onClick={exportCsv}
               >
                 <File className="w-5 h-5 text-green-400" />
@@ -78,7 +79,7 @@ const DataTable = ({
 
               {customButton && (
                 <button
-                  className="flex items-center border border-gray-300 rounded-md px-4 py-2 bg-[#64AE5F] text-white font-bold shadow-sm text-gray-700 hover:bg-green-100 "
+                  className="flex items-center border border-gray-300 rounded-md px-4 py-2 bg-[#64AE5F] text-white  text-sm shadow-sm text-gray-500 hover:bg-green-500 "
                   onClick={customButton.onClick}
                 >
                   <span className="ml-2">{customButton.label}</span>

@@ -1,6 +1,5 @@
 .tab-button{
     position: relative;
-    
     z-index: 100;
 }
 .tab-button.active{
@@ -51,5 +50,8 @@
     position: relative;
 }
 .tab-button-backg.hide-after::after {
+    content: none;
+}
+.tab-button-backg.hide-before::before {
     content: none;
 }
