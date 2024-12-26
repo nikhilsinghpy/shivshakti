@@ -49,7 +49,7 @@ const Manageuser = () => {
 
                 {/* Card Section */}
                 <div className='w-full mt-5 flex justify-center items-center'>
-                    <IconCard data={cardData} contentClass='justify-center items-center'  cardClass='w-[280px] h-[250px]' />
+                    <IconCard data={cardData} contentClass='justify-center items-center'  cardClass='w-[280px] h-[250px] lg:w-[230px] lg:h-[230px]' />
                 </div>
             </div>
 

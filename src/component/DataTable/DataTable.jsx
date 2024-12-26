@@ -55,10 +55,10 @@ const DataTable = ({
         {/* Header */}
         <div className="data-table-header p-7">
           <div className="flex justify-between items-center gap-4">
-            <h2 className="text-lg font-bold text-gray-500">{title}</h2>
+            <h2 className="text-lg font-bold text-gray-500 lg:text-[14px]">{title}</h2>
             <div className="data-table-header-right-section flex gap-2">
               {/* Search Input */}
-              <div className={`${searchbarclass} flex items-center border border-gray-300 rounded-md px-4 py-2 `}>
+              <div className={`${searchbarclass} flex items-center border border-gray-300 rounded-md px-4 py-2 lg:w-[160px]`}>
                 <Search />
                 <input
                   type="text"
