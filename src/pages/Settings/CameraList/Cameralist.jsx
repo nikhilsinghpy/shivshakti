@@ -2,10 +2,23 @@ import React, { useState } from 'react';
 import "./Cameralist.css";
 import Breadcrumb from '../../../component/Breadcrumb/Breadcrumb';
 import DataTable from '../../../component/DataTable/DataTable';
+import PopupDialog from '../../../component/PopupDialog/PopupDialog ';
+import Forms from '../../../component/Forms/Forms';
+import BigForms from '../../../component/Forms/BigForms';
 const Cameralist = () => {
 
+    const [isDialogOpen, setIsDialogOpen] = useState(false)
+  
+    const handleFormSubmit = (formData) => {
+      console.log('Form Data submitted:', formData)
+    }
     const exampleData = []
 
+    const formFields = [
+      { label: 'Select speaker group', type: 'text', id: 'speaker', name: 'speaker' },
+      { label: 'Sub location Name', type: 'text', id: 'subocation', name: 'sublocation' },
+      { label: 'Remark', type: 'text', id: 'remark', name: 'remark' }
+    ]
     const exampleColumns = [
         { label: 'Camera Name', accessor: 'camera name' },
         { label: 'Camera Vendor', accessor: 'camera vendor' },
@@ -17,7 +30,7 @@ const Cameralist = () => {
       const handleExportCsv = () => console.log('Exporting CSV...')
       const handleView = () => console.log('Exporting CSV...')
       const handleButtonClick = () => {
-        alert('Button clicked!');
+        setIsDialogOpen(true);
       };
 
       const breadcrumditem = [{ label: 'Settings', link: '/settings' }, { label: 'Camera List' }]
@@ -39,6 +52,13 @@ const Cameralist = () => {
         }}
       />
       </div>
+      <PopupDialog
+        isOpen={isDialogOpen}
+        onClose={() => setIsDialogOpen(false)}
+        title="Add Camera"
+      >
+        <BigForms onSubmitForm={handleFormSubmit} formFields={formFields} />
+      </PopupDialog>
     </div>
   )
 }

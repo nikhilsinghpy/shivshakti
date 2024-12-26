@@ -1,11 +1,20 @@
 import React from "react";
 
-const PopupDialog = ({ isOpen, onClose, title, children }) => {
+const PopupDialog = ({ isOpen, onClose, title, children, height, width }) => {
     if (!isOpen) return null;
 
+    console.log(height, width);
+    
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-            <div className="bg-white rounded-2xl shadow-lg w-full max-w-md p-6 relative">
+            <div
+                className="bg-white rounded-2xl shadow-lg p-6 relative"
+                style={{
+                    height: height || "auto", 
+                    width: width || "100%",
+                    maxWidth: "90%", 
+                }}
+            >
                 <button
                     onClick={onClose}
                     className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
