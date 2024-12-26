@@ -59,9 +59,9 @@ const Sublocation = () => {
       <PopupDialog
         isOpen={isDialogOpen}
         onClose={() => setIsDialogOpen(false)}
-        title="Add Location"
+        title="Add Sub Location"
         height="520px"
-        width="600px"
+        width="550px"
       >
         <Forms onSubmitForm={handleFormSubmit} formFields={formFields} />
       </PopupDialog>

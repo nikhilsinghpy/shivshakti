@@ -54,6 +54,8 @@ const Designation = () => {
         isOpen={isDialogOpen}
         onClose={() => setIsDialogOpen(false)}
         title="Add Designation"
+        height="420px"
+        width="500px"
       >
         <Forms onSubmitForm={handleFormSubmit} formFields={formFields} />
       </PopupDialog>
