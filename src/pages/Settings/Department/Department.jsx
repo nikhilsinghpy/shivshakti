@@ -57,6 +57,8 @@ const Department = () => {
         isOpen={isDialogOpen}
         onClose={() => setIsDialogOpen(false)}
         title="Add Department"
+        height="420px"
+        width="500px"
       >
         <Forms onSubmitForm={handleFormSubmit} formFields={formFields} />
       </PopupDialog>

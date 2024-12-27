@@ -23,7 +23,7 @@ const Forms = ({ onSubmitForm, formFields }) => {
     return (
         <div>
             <form
-                className="bg-white"
+                className="bg-white mt-5"
                 onSubmit={onHandleSubmit}
             >
                 {

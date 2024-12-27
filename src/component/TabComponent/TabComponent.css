@@ -16,7 +16,6 @@
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
     transition: all .3s ease-in-out;
-
 }
 .tab-button-backg::before{
     position: absolute;

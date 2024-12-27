@@ -22,17 +22,17 @@ const BigForms = ({ onSubmitForm, formFields }) => {
     };
     return (
         <div>
-            <form className="w-[900px] p-8 bg-white rounded-lg" onSubmit={onHandleSubmit}>
-                <div className="flex flex-wrap -mx-4">
+            <form className="w-[900px] p-4 bg-white rounded-lg h-[510px]" onSubmit={onHandleSubmit}>
+                <div className="flex flex-wrap -mx-8">
 
                     {
                         formFields.map((item, index) => (
-                            <div className="w-full md:w-1/2 px-4 mb-6" key={index}>
-                                <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor={item.id}>
+                            <div className="w-full md:w-1/2 px-4 mb-4" key={index}>
+                               <label className="block text-gray-500 text-lg font-bold mb-2" htmlFor={item.id}>
                                     {item.label}
                                 </label>
                                 <input
-                                    className="w-full border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50 px-3 py-3"
+                                    className="w-full border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50 px-2 py-2"
                                     id={item.id}
                                     name={item.name}
                                     type={item.type}
@@ -45,9 +45,9 @@ const BigForms = ({ onSubmitForm, formFields }) => {
 
                 </div>
 
-                <div className="flex items-center justify-center mt-12">
+                <div className="flex items-center justify-center mt-2">
                     <button
-                        className="bg-green-500 hover:bg-blue-700 text-white font-bold py-4 px-12 rounded-medium focus:outline-none focus:shadow-outline"
+                        className="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-10 rounded-medium focus:outline-none focus:shadow-outline"
                         type="submit"
                     >
                         Submit

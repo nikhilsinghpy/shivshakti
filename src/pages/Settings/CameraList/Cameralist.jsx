@@ -15,9 +15,16 @@ const Cameralist = () => {
     const exampleData = []
 
     const formFields = [
-      { label: 'Select speaker group', type: 'text', id: 'speaker', name: 'speaker' },
-      { label: 'Sub location Name', type: 'text', id: 'subocation', name: 'sublocation' },
-      { label: 'Remark', type: 'text', id: 'remark', name: 'remark' }
+      { label: 'Camera Name', type: 'text', id: 'cameraname', name: 'cameraName' },
+      { label: 'User Name', type: 'text', id: 'username', name: 'userName' },
+      { label: 'Camera Vendor', type: 'text', id: 'cameravendor', name: 'cameraVendor' },
+      { label: 'Password', type: 'Password', id: 'password', name: 'Password' },
+      { label: 'Camera mode', type: 'text', id: 'cameramode', name: 'cameraMode' },
+      { label: 'Port', type: 'text', id: 'port', name: 'Port' },
+      { label: 'Serial Number', type: 'text', id: 'serialnumberBg', name: 'serialNumber' },
+      { label: 'Speaker', type: 'text', id: 'speaker', name: 'Speaker' },
+      { label: 'IP Address', type: 'text', id: 'ipaddress', name: 'ipAddress' },
+      
     ]
     const exampleColumns = [
         { label: 'Camera Name', accessor: 'camera name' },
@@ -56,6 +63,8 @@ const Cameralist = () => {
         isOpen={isDialogOpen}
         onClose={() => setIsDialogOpen(false)}
         title="Add Camera"
+        height="650px"
+        width="980px"
       >
         <BigForms onSubmitForm={handleFormSubmit} formFields={formFields} />
       </PopupDialog>

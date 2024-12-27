@@ -55,7 +55,8 @@ export const Location = () => {
         />
       </div>
 
-      <PopupDialog isOpen={isDialog} onClose={() => setIsDialogOpen(false)} title='Sub Location'>
+      <PopupDialog isOpen={isDialog} onClose={() => setIsDialogOpen(false)} title='Sub Location'  height="420px"
+        width="420px">
         <Forms onSubmitForm={handleSubmit} formFields={formFields} />
       </PopupDialog>
     </div>
