@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Edit2, Trash2, File, Search } from 'lucide-react'
+import csv from "../../assets/Csv.png"
 
 const DataTable = ({
   data,
@@ -52,13 +53,13 @@ const DataTable = ({
   return (
     <div className="flex flex-col">
       <div className="bg-white w-full min-h-[500px] rounded-2xl">
-        {/* Header */}
+        {/* Header */} 
         <div className="data-table-header p-7">
           <div className="flex justify-between items-center gap-4">
-            <h2 className="text-lg font-bold text-gray-500 lg:text-[14px]">{title}</h2>
+            <h2 className="text-lg font-[600] text-[#000000] lg:text-[14px]">{title}</h2>
             <div className="data-table-header-right-section flex gap-2">
               {/* Search Input */}
-              <div className={`${searchbarclass} flex items-center border border-gray-300 rounded-md px-4 py-2 lg:w-[160px]`}>
+              <div className={`${searchbarclass} flex items-center border border-gray-300 rounded-[14px] px-4 py-2 lg:w-[160px]`}>
                 <Search />
                 <input
                   type="text"
@@ -70,19 +71,20 @@ const DataTable = ({
               </div>
               {/* Export CSV Button */}
               <button
-                className="flex items-center text-sm border border-gray-300 rounded-md px-4 py-2 shadow-sm text-gray-400 hover:bg-gray-100"
+                className="flex items-center  border border-gray-300 rounded-[14px] px-4 py-2 shadow-sm  hover:bg-gray-100"
                 onClick={exportCsv}
               >
-                <File className="w-5 h-5 text-green-400" />
-                <span className="ml-2">Export CSV</span>
+                  <img src={csv} alt="csv" className='w-5 h-5'/>
+                <span className="ml-2 text-[#292D32] font-[400] text-[14px]">Export CSV</span>
               </button>
 
               {customButton && (
                 <button
-                  className="flex items-center border border-gray-300 rounded-md px-4 py-2 bg-[#64AE5F] text-white  text-sm shadow-sm text-gray-500 hover:bg-green-500 "
+                  className="flex items-center border border-gray-300 rounded-[14px] px-4 py-2 bg-[#64AE5F] text-white  text-sm shadow-sm  hover:bg-green-500 "
                   onClick={customButton.onClick}
                 >
-                  <span className="ml-2">{customButton.label}</span>
+
+                  <span className="ml-2  text-[#FFFFFF] font-[400] text-[14px]">{customButton.label}</span>
                 </button>
               )}
             </div>
@@ -90,12 +92,12 @@ const DataTable = ({
         </div>
 
         {/* Table */}
-        <div className="relative overflow-x-auto sm:rounded-lg">
+        <div className="relative overflow-x-auto ">
           <table className="w-full text-sm text-left text-gray-500">
-            <thead className="text-xs text-white uppercase bg-[rgb(0,173,238)]">
+            <thead className="text-xs text-white uppercase font-[600] bg-[#00ADEE]">
               <tr>
                 {columns.map((col) => (
-                  <th key={col.accessor} className="px-6 py-3">
+                  <th key={col.accessor} className="px-6 py-3 ">
                     {col.label}
                   </th>
                 ))}
