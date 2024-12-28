@@ -56,18 +56,20 @@ export const HomeTab = () => {
               <div className="flex gap-8 items-center">
                 <div className="flex flex-col">
                   <h1  className={`${data.textcolor} text-4xl font-bold`}>{data.online}</h1>
-                  <p className={`${data.textcolor} `}>
-                    Online
-                    <span className="w-2 h-2 bg-green-500 rounded-full ml-2"></span>
-                  </p>
+                  <div className="flex items-center justify-start gap-2">
+                    <p className={`${data.textcolor} `}>Online</p>
+                    <span className="w-2 h-2 rounded-full bg-[#2AE91D] mr-2"></span>
+                  </div>
                 </div>
                 <div  className={`${data.bordercolor} h-10 w-px opacity-50`}></div>
                 <div className="flex flex-col">
                   <h1  className={`${data.textcolor} text-4xl font-bold`}>{data.offline}</h1>
+                  <div style={{ display: "flex", alignItems: "center" }}>
                   <p className={`${data.textcolor} `}>
                     Offline
-                    <span className="w-2 h-2 bg-red-500 rounded-full ml-2"></span>
                   </p>
+                  <span className="w-2 h-2 bg-red-500 rounded-full ml-2"></span>
+                  </div>
                 </div>
               </div>
             </div>

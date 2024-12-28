@@ -30,11 +30,11 @@ const Forms = ({ onSubmitForm, formFields }) => {
                     formFields.map((item, index) => (
                         (
                             <div className="mb-4 w-full" key={index}>
-                                <label className="block text-gray-500 text-lg font-bold mb-2" htmlFor={item.id}>
+                                <label className="block text-gray-500 text-md font-[600] mb-2" htmlFor={item.id}>
                                     {item.label}
                                 </label>
                                 <input
-                                    className="appearance-none border rounded w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    className="appearance-none border rounded-md w-full py-4 px-6 text-gray-600 leading-tight focus:outline-none focus:shadow-outline"
                                     id={item.id}
                                     name={item.name}
                                     type={item.type}

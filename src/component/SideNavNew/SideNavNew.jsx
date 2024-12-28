@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Home, Users, FileText, Settings, User, CircleGauge } from "lucide-react";
+import { Home, Users, FileText, Settings, User, CircleGauge, UserRound } from "lucide-react";
 import siptoklogo from "../../assets/siptok.png";
 import { Link, useNavigate } from "react-router-dom";
 import "./SideNavNew.css";
@@ -48,7 +48,7 @@ export const SideNavNew = () => {
                 onClick={() => handleClick("manage-user")}
               >
                 <div className="flex items-center text-gray-600  transition-all cursor-pointer">
-                  <Users className="h-5 w-5 mr-3" />
+                  <UserRound className="h-5 w-5 mr-3"/>
                   <span className="text-sm font-bold">Manage User</span>
                 </div>
               </div>

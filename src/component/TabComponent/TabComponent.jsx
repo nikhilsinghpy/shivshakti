@@ -50,7 +50,7 @@ const TabComponent = ({ navItems, tabContents }) => {
             ))}
           </nav>
           <div className="tab-button-backg"></div>
-          <div className="tab-card bg-white w-full mt-5 min-h-[500px] rounded-2xl p-4">
+          <div className="tab-card bg-white w-full mt-5 min-h-[400px] rounded-2xl p-4">
             {tabContents[activeIndex]}
           </div>
         </div>
