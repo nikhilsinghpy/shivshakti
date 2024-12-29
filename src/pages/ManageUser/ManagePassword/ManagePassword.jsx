@@ -48,7 +48,7 @@ const ManagePassword = () => {
     <div className="w-full p-5">
         <Breadcrumb items={breadcrumbItems}/>
       <div className="bg-gray-100 mt-5 flex w-full justify-between gap-4">
-        <div className="bg-white rounded-3xl p-8 w-1/2 ">
+        <div className="bg-white rounded-3xl p-8 w-[50%] ">
           <form>
             <div className="mb-4">
               <label
@@ -106,7 +106,7 @@ const ManagePassword = () => {
                 className="w-full px-4 py-2 border rounded-md focus:ring focus:ring-blue-200 focus:outline-none"
               />
             </div>
-            <div className='flex justify-center'>
+            <div className='flex justify-center items-center'>
               <button
                 type="submit"
                 className="w-[200px] px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:ring focus:ring-green-200 focus:outline-none"
@@ -116,6 +116,7 @@ const ManagePassword = () => {
             </div>
           </form>
         </div>
+        <div className='w-[50%]'>
         <DataTable
           data={exampleData}
           onEdit={handleEdit}
@@ -125,6 +126,7 @@ const ManagePassword = () => {
           exportCsv={handleExportCsv}
           title="List of Users"
         />
+        </div>
       </div>
     </div>
   )

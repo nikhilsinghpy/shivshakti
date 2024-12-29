@@ -15,9 +15,9 @@ export const IconCard = ({
           <div className={`card-outer`}>
             <div className={`${cardClass} card bg-white shadow-md rounded-3xl p-4 min-w-52 min-h-52 flex flex-col items-center justify-center`}>
               <div
-                className={`${item.bgColor || 'bg-blue-100'} rounded-full w-16 h-16 flex justify-center items-center`}
+                className={`${item.bgColor || 'bg-blue-100'} rounded-full w-16 h-16 flex justify-center items-center above1440:w-24 above1440:h-24`}
               >
-                <item.icon className={`font-base ${iconClass}`} />
+                <item.icon className={`font-base ${iconClass} above1440:w-10 above1440:h-10`} />
               </div>
             </div>
             <p

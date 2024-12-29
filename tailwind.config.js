@@ -7,7 +7,11 @@ export default {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        'above1440': '1440px', // Custom screen size
+      },
+    },
   },
   darkMode: "class",
   plugins: [nextui()]

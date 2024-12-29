@@ -63,7 +63,7 @@ const Settings = () => {
         <div>
             <div className="bg-gray-100 min-h-screen p-4">
                 {/* Card Section */}
-                <IconCard data={cardData} contentClass=' ' cardClass='w-10 h-40' />
+                <IconCard data={cardData} contentClass=' ' cardClass='w-[270px] h-[250px] above1440:w-[330px] above1440:h-[300px]' />
             </div>
         </div>
     );
