@@ -1,9 +1,10 @@
-.side-nav-item-wrapper{
+.side-nav-item-wrapper {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
 }
-.side-nav-item{
+
+.side-nav-item {
     width: 90%;
     border-top-left-radius: 2rem;
     border-bottom-left-radius: 2rem;
@@ -11,15 +12,16 @@
     position: relative;
     transition: all 0.3s ease-in-out;
 }
-.side-nav-item:hover{
-    background-color: #F1F2F7;
-}
-.side-nav-item.active{
+
+.side-nav-item:hover {
     background-color: #F1F2F7;
 }
 
-.side-nav-item.active ::before
-{
+.side-nav-item.active {
+    background-color: #F1F2F7;
+}
+
+.side-nav-item.active::before {
     position: absolute;
     content: "";
     bottom: -2rem;
@@ -28,11 +30,12 @@
     width: 2rem;
     height: 2rem;
     border-bottom-right-radius: 2.5rem;
-    box-shadow: 0.313rem 0.313rem 0px 0.313rem #F1F2F7;
+    box-shadow: 0.313rem 0.313rem 0 0.313rem #F1F2F7;
     transform: rotate(-90deg);
     transition: all 0.3s ease-in-out;
 }
-.side-nav-item.active ::after{
+
+.side-nav-item.active::after {
     position: absolute;
     content: "";
     top: -2rem;
@@ -41,6 +44,44 @@
     width: 2rem;
     height: 2rem;
     border-bottom-right-radius: 2.5rem;
-    box-shadow: 0.313rem 0.313rem 0px 0.313rem #F1F2F7;
+    box-shadow: 0.313rem 0.313rem 0 0.313rem #F1F2F7;
     transition: all 0.3s ease-in-out;
+}
+
+/* Adjust width for larger screens */
+@media screen and (min-width: 1600px) {
+    .w-\[270px\] {
+        width: 320px !important;
+    }
+    
+    .w-\[110px\] {
+        width: 130px !important;
+    }
+}
+
+/* Further adjustments for 1980px screens */
+@media screen and (min-width: 1920px) {
+    .w-\[270px\] {
+        width: 360px !important;
+    }
+    
+    .w-\[110px\] {
+        width: 190px !important;
+    }
+    
+    .side-nav-item {
+        padding: 1.25rem 2.5rem;
+    }
+    
+    .text-sm {
+        font-size: 1.3rem !important;
+    }
+    
+    .h-5 {
+        height: 1.5rem !important;
+    }
+    
+    .w-5 {
+        width: 1.5rem !important;
+    }
 }
