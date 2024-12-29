@@ -4,8 +4,8 @@ import Polygon from "../../assets/Polygon 2.png"
 export const BottomNav = () => {
   return (
     <div
-      className="fixed bottom-5 left-65 w-[800px] bg-gray-800 shadow-lg rounded-2xl p-3 flex gap-2"
-      style={{ zIndex: 600, left: "50%", transform: "translateX(-50%)" }}
+      className="absolute bottom-5 left-65 w-[800px] bg-gray-800 shadow-lg rounded-2xl p-3 flex gap-2"
+      style={{ zIndex: 600, left: "20%" }}
     >
       <div className="button-item w-full min-h-[50px] flex items-center justify-center flex-col border-r-1 border-gray-600">
         <button className="bg-[#EE786C] text-white p-2 rounded-full"><CircleX /></button>
