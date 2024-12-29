@@ -52,14 +52,14 @@ export const Dashboard = () => {
   const percentageAvailable = 100 - percentageUsed
   return (
     <>
-      <div className="flex flex-col lg:flex-row w-full min-h-screen gap-4">
+      <div className="flex flex-col lg:flex-row w-full min-h-screen gap-2">
         {/* Left Section - 75% width on laptop, full width on smaller screens */}
-        <div className="w-full lg:w-[75%]">
+        <div className="w-full lg:w-[70%]">
           <TabComponent navItems={navItems} tabContents={tabContents} />
         </div>
 
         {/* Right Section - 25% width on laptop, hidden on smaller screens */}
-        <div className="w-full lg:w-[25%] h-screen overflow-y-auto">
+        <div className="w-full lg:w-[30%] h-screen overflow-y-auto">
           <div className="flex flex-col items-center p-4 h-full">
             {/* Time Card */}
             <div className="w-full p-4 bg-[#292D32] rounded-2xl text-white flex justify-center items-center gap-3">
@@ -70,10 +70,10 @@ export const Dashboard = () => {
             </div>
 
             {/* Storage Card */}
-            <div className="p-3 bg-white rounded-2xl mt-6 w-full lg:mt-4">
+            <div className="p-3 bg-white rounded-2xl mt-6 w-full h-[300px] lg:mt-4">
               <h4 className="text-xl font-bold text-gray-600 lg:text-lg">Storage</h4>
-              <div className="flex justify-between items-center">
-                <div className="flex flex-col gap-3 mt-3 lg:mt-2">
+              <div className="flex justify-center items-center gap-[3rem]">
+                <div className="flex flex-col gap-5 mt-3 lg:mt-2">
                   {/* Used */}
                   <div className="flex items-center">
                     <span className="w-3 h-3 rounded-full bg-blue-500 mr-2"></span>
@@ -90,7 +90,7 @@ export const Dashboard = () => {
                   </div>
                 </div>
                 <div
-                  className="w-28 h-28 lg:w-20 lg:h-20"
+                  className="w-28 h-28 "
                   style={{
                     backdropFilter:
                       'box-shadow(0px 0px 10px rgba(0, 0, 0, 0.1))',

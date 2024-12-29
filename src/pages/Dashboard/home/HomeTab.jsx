@@ -11,15 +11,17 @@ export const HomeTab = () => {
       offline: 10,
       icon: speaker,
       background: 'bg-blue-500',
-      textcolor:"text-white"
+      textcolor:"text-white",
+      bordercolor:"bg-white"
     },
     {
       title: 'Announcers',
       online: 27,
       offline: 10,
       icon: microphone,
-      background: 'bg-green-500',
-      textcolor:"text-white"
+      background: 'bg-[#64AE5F]',
+      textcolor:"text-white",
+      bordercolor:"bg-white"
     },
     {
       title: 'Schedules',
@@ -27,7 +29,8 @@ export const HomeTab = () => {
       offline: 10,
       icon: clock,
       background: 'bg-[#E0EFDF]',
-      textcolor:"text-gray-700"
+      textcolor:"text-gray-700",
+      bordercolor:"bg-gray-700"
     },
     {
       title: 'Zones',
@@ -35,7 +38,8 @@ export const HomeTab = () => {
       offline: 10,
       icon: speakerAlt,
       background: 'bg-[#DFEBEF]',
-      textcolor:"text-gray-700"
+      textcolor:"text-gray-700",
+      bordercolor:"bg-gray-700"
     },
   ]
 
@@ -52,18 +56,20 @@ export const HomeTab = () => {
               <div className="flex gap-8 items-center">
                 <div className="flex flex-col">
                   <h1  className={`${data.textcolor} text-4xl font-bold`}>{data.online}</h1>
-                  <p className={`${data.textcolor} `}>
-                    Online
-                    <span className="w-2 h-2 bg-green-500 rounded-full ml-2"></span>
-                  </p>
+                  <div className="flex items-center justify-start gap-2">
+                    <p className={`${data.textcolor} `}>Online</p>
+                    <span className="w-2 h-2 rounded-full bg-[#2AE91D] mr-2"></span>
+                  </div>
                 </div>
-                <div className="h-10 w-px bg-white opacity-50"></div>
+                <div  className={`${data.bordercolor} h-10 w-px opacity-50`}></div>
                 <div className="flex flex-col">
                   <h1  className={`${data.textcolor} text-4xl font-bold`}>{data.offline}</h1>
+                  <div style={{ display: "flex", alignItems: "center" }}>
                   <p className={`${data.textcolor} `}>
-                    Offline{' '}
-                    <span className="w-2 h-2 bg-red-500 rounded-full ml-2"></span>
+                    Offline
                   </p>
+                  <span className="w-2 h-2 bg-red-500 rounded-full ml-2"></span>
+                  </div>
                 </div>
               </div>
             </div>
