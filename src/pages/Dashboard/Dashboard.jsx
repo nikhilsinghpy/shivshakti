@@ -70,7 +70,7 @@ export const Dashboard = () => {
             </div>
 
             {/* Storage Card */}
-            <div className="p-3 bg-white rounded-2xl mt-6 w-full h-[300px] lg:mt-4">
+            <div className="p-3 bg-white rounded-2xl mt-6 w-full h-[300px] lg:mt-4 storage">
               <h4 className="text-xl font-bold text-gray-600 lg:text-lg">Storage</h4>
               <div className="flex justify-center items-center gap-[3rem]">
                 <div className="flex flex-col gap-5 mt-3 lg:mt-2">
@@ -102,10 +102,10 @@ export const Dashboard = () => {
             </div>
 
             {/* CPU and RAM Usage */}
-            <div className="p-3 bg-white rounded-2xl mt-6 w-full lg:mt-4">
-              <h4 className="text-lg font-bold text-gray-500">CPU Ram usage</h4>
+            <div className="p-3 bg-white rounded-2xl mt-6 w-full lg:mt-4 cpu_ram">
+              <h4 className="text-lg font-bold text-gray-500 mb-4">CPU Ram usage</h4>
               <div className="w-full mt-3 lg:mt-2">
-                <div className="flex justify-start gap-2 mb-2 ">
+                <div className="flex justify-start gap-2 mb-4">
                   <span className="w-[100px] text-gray-500 text-xs">
                     CPU info :
                   </span>
@@ -113,7 +113,7 @@ export const Dashboard = () => {
                     11th gen Intel (R) Core (TM) i5-1135G7 @ 2.40GHz
                   </span>
                 </div>
-                <div className="flex justify-start mb-2">
+                <div className="flex justify-start mb-4">
                   <span className="w-[100px] text-gray-500 text-xs">
                     Uptime :
                   </span>
@@ -127,7 +127,7 @@ export const Dashboard = () => {
                 </div>
               </div>
               <hr className="my-5"></hr>
-              <h3 className="text-lg font-bold text-gray-400">Memory usage</h3>
+              <h3 className="text-lg font-bold text-gray-400 mb-5">Memory usage</h3>
               <div className="w-full mt-3 lg:mt-2">
                 {/* CPU */}
                 <div className="flex justify-start gap-2 mb-5">

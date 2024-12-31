@@ -54,3 +54,13 @@
 .tab-button-backg.hide-before::before {
     content: none;
 }
+
+
+
+
+
+@media screen and (min-width: 1920px) {
+    .tab-card {
+        min-height: 820px !important; /* Increase the height */
+    }
+}
