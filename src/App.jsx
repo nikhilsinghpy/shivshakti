@@ -13,13 +13,13 @@ import Designation from './pages/Settings/Designation/Designation';
 import { ReportSetting } from './pages/Report/ReportSetting/ReportSetting';
 import { CallLogs } from './pages/Report/CallLogs/CallLogs';
 import { AnnoucementLogs } from './pages/Report/AnnoucementLogs/AnnoucementLogs';
-import Imports from './pages/Settings/Imports/Imports';
 import { Accessrights } from './pages/ManageUser/AccessRights/Accessrights';
 import { Addrole } from './pages/ManageUser/AddRole/Addrole';
 import Forms from './component/Forms/Forms';
 import { Location } from './pages/Settings/location/Location';
 import { MobileDevices } from './pages/Settings/MobileDevices/MobileDevices';
 import BigForms from './component/Forms/BigForms';
+import { Imports } from './pages/Settings/Imports/Imports';
 
 
 function App() {

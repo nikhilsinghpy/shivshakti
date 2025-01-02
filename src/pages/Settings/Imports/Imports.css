@@ -1,0 +1,53 @@
+.tab-button-import{
+    position: relative;
+    z-index: 100;
+}
+
+.tab-button-backg-import{
+    width: 140px;
+    height: 100px;
+    background-color: #F1F2F7;
+    position: absolute;
+    top: -3%;
+    left: 0%;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    transition: all .3s ease-in-out;
+}
+.tab-button-backg-import::before{
+    position: absolute;
+    content: "";
+    bottom: 15%;
+    right: -8%;
+    background: transparent;
+    width: 2rem;
+    height: 2rem;
+    transform: rotate(90deg);
+    border-bottom-right-radius: 2.5rem;
+    box-shadow: 0.313rem 0.313rem 0px 0.313rem #F1F2F7;
+    transition: all 0.3s ease-in-out;
+}
+.tab-button-backg-import::after{
+    position: absolute;
+    content: "";
+    bottom: 15%;
+    left: -8%;
+    background: transparent;
+    width: 2rem;
+    height: 2rem;
+    /* transform: rotate(90deg); */
+    border-bottom-right-radius: 2.5rem;
+    box-shadow: 0.313rem 0.313rem 0px 0.313rem #F1F2F7;
+    transition: all 0.3s ease-in-out;
+}
+
+.tab-card-import{
+    z-index: 100;
+    position: relative;
+}
+
+@media screen and (min-width: 1920px) {
+    .tab-card-import {
+        min-height: 720px !important; /* Increase the height */
+    }
+}
