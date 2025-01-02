@@ -3,6 +3,7 @@ import speaker from '../../../assets/Speaker.png'
 import microphone from '../../../assets/Mic.png'
 import clock from '../../../assets/Group 476.png'
 import speakerAlt from '../../../assets/Speaker Group.png'
+import "./HomeTab.css"
 export const HomeTab = () => {
   const cardata = [
     {
@@ -45,7 +46,7 @@ export const HomeTab = () => {
 
   return (
     <div className="w-full grid grid-cols-2 gap-4">
-      {cardata.map((data, index) => (
+      {cardata?.map((data, index) => (
         <div
           key={index}
           className={`card ${data.background} w-full h-[200px] rounded-3xl flex flex-col text-white p-5`}

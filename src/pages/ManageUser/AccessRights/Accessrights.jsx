@@ -69,8 +69,8 @@ export const Accessrights = () => {
             </thead>
             <tbody>
               {menuItems.map((item, index) => (
-                <tr key={index} className="hover:bg-gray-50">
-                  <td className="px-4 py-2 border font-[500] above1440:px-6 above1440:py-3">
+                <tr key={index} className="hover:bg-gray-50 ">
+                  <td className="px-4 py-2 border font-[500] above1440:px-6 above1440:py-3 jsdbc">
                     {item}
                   </td>
                   <td className="px-4 py-2 border text-left above1440:px-6 above1440:py-3">
