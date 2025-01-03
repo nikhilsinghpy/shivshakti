@@ -1,6 +1,8 @@
 import { CircleX, List, Music, Play, Volume1, Volume2, VolumeOff } from "lucide-react";
 import React from "react";
 import Polygon from "../../assets/Polygon 2.png"
+import "./BottomNav.css"
+
 export const BottomNav = () => {
   return (
     <div

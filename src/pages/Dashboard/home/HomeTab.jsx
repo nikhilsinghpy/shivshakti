@@ -12,8 +12,8 @@ export const HomeTab = () => {
       offline: 10,
       icon: speaker,
       background: 'bg-blue-500',
-      textcolor:"text-white",
-      bordercolor:"bg-white"
+      textcolor: "text-white",
+      bordercolor: "bg-white"
     },
     {
       title: 'Announcers',
@@ -21,8 +21,8 @@ export const HomeTab = () => {
       offline: 10,
       icon: microphone,
       background: 'bg-[#64AE5F]',
-      textcolor:"text-white",
-      bordercolor:"bg-white"
+      textcolor: "text-white",
+      bordercolor: "bg-white"
     },
     {
       title: 'Schedules',
@@ -30,8 +30,8 @@ export const HomeTab = () => {
       offline: 10,
       icon: clock,
       background: 'bg-[#E0EFDF]',
-      textcolor:"text-gray-700",
-      bordercolor:"bg-gray-700"
+      textcolor: "text-gray-700",
+      bordercolor: "bg-gray-700"
     },
     {
       title: 'Zones',
@@ -39,37 +39,35 @@ export const HomeTab = () => {
       offline: 10,
       icon: speakerAlt,
       background: 'bg-[#DFEBEF]',
-      textcolor:"text-gray-700",
-      bordercolor:"bg-gray-700"
+      textcolor: "text-gray-700",
+      bordercolor: "bg-gray-700"
     },
   ]
 
   return (
-    <div className="w-full grid grid-cols-2 gap-4">
+    <div className="w-full grid grid-cols-2 gap-4 d-asd-amcae-di">
       {cardata?.map((data, index) => (
         <div
           key={index}
-          className={`card ${data.background} w-full h-[200px] rounded-3xl flex flex-col text-white p-5`}
+          className={`card ${data.background} w-full rounded-3xl flex flex-col text-white p-5`}
         >
-          <h3 className={`${data.textcolor} text-3xl font-semibold mb-8`} >{data.title}</h3>
+          <h3 className={`${data.textcolor} text-3xl font-semibold mb-8`}>{data.title}</h3>
           <div className="flex justify-between">
             <div className="card-content-section w-[60%]">
               <div className="flex gap-8 items-center">
                 <div className="flex flex-col">
-                  <h1  className={`${data.textcolor} text-4xl font-bold`}>{data.online}</h1>
+                  <h1 className={`${data.textcolor} text-4xl font-bold`}>{data.online}</h1>
                   <div className="flex items-center justify-start gap-2">
                     <p className={`${data.textcolor} `}>Online</p>
                     <span className="w-2 h-2 rounded-full bg-[#2AE91D] mr-2"></span>
                   </div>
                 </div>
-                <div  className={`${data.bordercolor} h-10 w-px opacity-50`}></div>
+                <div className={`${data.bordercolor} h-10 w-px opacity-50`}></div>
                 <div className="flex flex-col">
-                  <h1  className={`${data.textcolor} text-4xl font-bold`}>{data.offline}</h1>
+                  <h1 className={`${data.textcolor} text-4xl font-bold`}>{data.offline}</h1>
                   <div style={{ display: "flex", alignItems: "center" }}>
-                  <p className={`${data.textcolor} `}>
-                    Offline
-                  </p>
-                  <span className="w-2 h-2 bg-red-500 rounded-full ml-2"></span>
+                    <p className={`${data.textcolor} `}>Offline</p>
+                    <span className="w-2 h-2 bg-red-500 rounded-full ml-2"></span>
                   </div>
                 </div>
               </div>
@@ -85,5 +83,6 @@ export const HomeTab = () => {
         </div>
       ))}
     </div>
+
   )
 }

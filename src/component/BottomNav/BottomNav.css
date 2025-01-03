@@ -1,0 +1,23 @@
+@media screen and (min-width: 1920px) {
+  .absolute {
+    width: 1000px !important; 
+    height: 150px !important;
+    left: 22% !important; 
+    bottom: 20px;
+  }
+
+  .button-item {
+    min-height: 70px !important;
+    gap: 8px;
+  }
+
+  .button-item p {
+    font-size: 19px !important;
+    margin-top: 12px;
+  }
+
+  .button-item button {
+    padding: 20px !important; 
+    font-size: 24px; 
+  }
+}
