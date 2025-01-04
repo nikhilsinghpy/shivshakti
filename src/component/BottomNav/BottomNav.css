@@ -1,8 +1,34 @@
-@media screen and (min-width: 1920px) {
+/* Styles for devices with a minimum width of 1440px */
+@media screen and (min-width: 1440px) {
   .absolute {
-    width: 1000px !important; 
+    width: 780px !important;
     height: 150px !important;
-    left: 22% !important; 
+    left: 20% !important;
+    bottom: 20px;
+  }
+
+  .button-item {
+    min-height: 30px !important;
+    gap: 8px;
+  }
+
+  .button-item p {
+    font-size: 14px !important;
+    margin-top: 12px;
+  }
+
+  .button-item button {
+    padding: 16px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* Styles for devices with a minimum width of 1980px */
+@media screen and (min-width: 1980px) {
+  .absolute {
+    width: 1000px !important;
+    height: 150px !important;
+    left: 22% !important;
     bottom: 20px;
   }
 
@@ -17,7 +43,7 @@
   }
 
   .button-item button {
-    padding: 20px !important; 
-    font-size: 24px; 
+    padding: 20px !important;
+    font-size: 24px;
   }
 }

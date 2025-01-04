@@ -59,8 +59,34 @@
 
 
 
-@media screen and (min-width: 1920px) {
+@media screen and (min-width: 1440px) {
     .tab-card {
-        min-height: 840px !important; /* Increase the height */
+        min-height: 750px !important; /* Increase the height */
     }
+    .tab-button-backg::before{
+        position: absolute;
+        content: "";
+        bottom: 13%;
+        right: -15%;
+        background: transparent;
+        width: 2rem;
+        height: 2rem;
+        transform: rotate(90deg);
+        border-bottom-right-radius: 2.5rem;
+        box-shadow: 0.313rem 0.313rem 0px 0.313rem #fffd;
+        transition: all 0.3s ease-in-out;
+    }
+    .tab-button-backg::after{
+        position: absolute;
+        content: "";
+        bottom: 13%;
+        left: -15%;
+        background: transparent;
+        width: 2rem;
+        height: 2rem;
+        /* transform: rotate(90deg); */
+        border-bottom-right-radius: 2.5rem;
+        box-shadow: 0.313rem 0.313rem 0px 0.313rem #ffff;
+        transition: all 0.3s ease-in-out;
+    }    
 }

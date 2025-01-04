@@ -26,13 +26,13 @@ const TabComponent = ({ navItems, tabContents }) => {
     <>
       <div className="p-5 w-full">
         <div className="tab-wrap relative">
-          <nav className="flex mt-5 items-center justify-between px-[7px] w-full">
+          <nav className="flex mt-5 items-center gap-5 px-[7px] w-full">
             {navItems.map((item, index) => (
               <button
                 key={index}
                 ref={(el) => (tabRefs.current[index] = el)}
                 onClick={() => handleTabClick(index)}
-                className={`bg-white text-gray-700 hover:bg-gray-200 flex items-center gap-4 px-4 py-2 rounded-full font-bold tab-button ${
+                className={`bg-white text-gray-700 hover:bg-gray-200 flex items-center gap-4 px-4 py-2 rounded-full font-bold tab-button w-full ${
                   activeIndex === index ? 'active' : ''
                 }`}
               >

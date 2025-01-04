@@ -52,7 +52,7 @@ export const Dashboard = () => {
   const percentageAvailable = 100 - percentageUsed
   return (
     <>
-      <div className="flex flex-col lg:flex-row w-full min-h-screen gap-2">
+      <div className="flex  lg:flex-row w-full min-h-screen gap-2">
         {/* Left Section - 75% width on laptop, full width on smaller screens */}
         <div className="w-full lg:w-[70%]">
           <TabComponent navItems={navItems} tabContents={tabContents} />
