@@ -1,60 +1,255 @@
-@media screen and (min-width: 1920px) {
-    /* Previous styles remain the same */
-    
-    .lg\:w-\[30\%\] {
-        width: 28% !important;
+.time-text {
+    font-size: 3.3rem;
+}
+
+.day-date-text {
+    font-size: 1.2rem;
+}
+
+.dash-board-card {
+    margin-top: 1rem;
+    border-radius: 24px;
+    width: 100%;
+    padding: 1.5rem 1rem;
+    background: #FFFFFF;
+    color: black;
+}
+
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.info p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 15px 0;
+}
+
+.memory-usage {
+    font-size: 0.9rem;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Usage Bar Styling */
+.usage-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.usage-bar span {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.bar-container {
+    flex: 1;
+    height: 10px;
+    background: #f0f0f0;
+    border-radius: 5px;
+    margin: 0 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.bar {
+    height: 100%;
+    border-radius: 5px;
+}
+
+.cpu-bar {
+    background: #00aaff;
+}
+
+.ram-bar {
+    background: #00cc66;
+}
+
+.swap-bar {
+    background: #ffaa00;
+}
+
+.storage {
+    max-height: 321px;
+}
+
+.cpu-ram-usage {
+    height: calc(100% - 415px);
+}
+
+.dashboard-card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.storagetext {
+    font-size: 1.7rem;
+}
+
+/* Media Queries */
+@media (max-width: 1690px) {
+    .time-text {
+        font-size: 2.5rem;
     }
 
-    /* Decreased height for storage card */
+    .day-date-text {
+        font-size: 1.1rem;
+    }
+
+    .storagetext {
+        font-size: 1.5rem;
+    }
+    .cpu-ram-usage-card {
+        max-width: 500px;
+        padding: 25px;
+    }
+
+    .card-title {
+        font-size: 1.4rem;
+    }
+
+    .info p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 1440px) {
+    .time-text {
+        font-size: 1.8rem;
+    }
+
+    .day-date-text {
+        font-size: 1rem;
+    }
+
+    .storagetext {
+        font-size: 1.5rem;
+    }
+    .cpu-ram-usage-card {
+        max-width: 450px;
+        padding: 20px;
+    }
+
+    .card-title {
+        font-size: 1.3rem;
+    }
+
+    .info p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .time-text {
+        font-size: 1.6rem;
+    }
+
+    .day-date-text {
+        font-size: 0.9rem;
+    }
+
     .storage {
-        height: 300px !important; /* Decreased height */
-        margin-top: 2rem !important;
+        max-height: 280px;
     }
 
-    /* Background color and padding adjustments */
-    .bg-\[\#292D32\] {
-        padding: 1.75rem !important;
-        border-radius: 1.25rem !important;
+    .cpu-ram-usage {
+        height: calc(100% - 415px);
+        /* Ensure proper calculation context */
     }
 
-    .bg-\[\#292D32\] .text-3xl {
-        font-size: 2.5rem !important;
+    .storagetext {
+        font-size: 1.4rem;
+        /* Avoid using !important unless necessary */
+    }
+    .cpu-ram-usage-card {
+        max-width: 400px;
+        padding: 18px;
     }
 
-    /* CPU RAM Card specific adjustments */
-    .cpu_ram {
-        height: 620px !important;  /* Increased height */
-        padding: 2rem !important;  /* Increased padding */
+    .card-title {
+        font-size: 1.2rem;
     }
 
-    /* Adjust internal spacing */
-    .w-\[100px\] {
-        width: 130px !important;
-        font-size: 1rem !important;
+    .info p {
+        font-size: 0.8rem;
     }
 
-    /* Progress bars - made taller */
-    .rounded-\[12px\] {
-        height: 1.1rem !important;  /* Increased height */
+    .usage-bar span {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .time-text {
+        font-size: 1.2rem;
     }
 
-    /* Increased bottom margin */
-    .mb-5 {
-        margin-bottom: 3rem !important;  /* Increased spacing between sections */
+    .day-date-text {
+        font-size: 0.75rem;
     }
 
-    /* Adjust gap */
-    .gap-\[3rem\] {
-        gap: 3.9rem !important;
+    .storage {
+        max-height: 280px;
     }
 
-    /* Small text adjustment */
-    .lg\:text-\[10px\] {
-        font-size: 0.895rem !important;
+    .cpu-ram-usage {
+        height: calc(100% - 415px);
     }
 
-    /* General spacing */
-    .my-5 {
-        margin: 2.5rem 0 !important;
+    .storagetext {
+        font-size: 1rem;
+    }
+    .cpu-ram-usage-card {
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .info p {
+        font-size: 0.75rem;
+    }
+
+    .usage-bar span {
+        font-size: 0.75rem;
+    }
+}
+
+/* For screens below 768px */
+@media (max-width: 768px) {
+    .cpu-ram-usage-card {
+        padding: 12px;
+        max-width: 100%;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .info p {
+        font-size: 0.7rem;
+    }
+
+    .usage-bar span {
+        font-size: 0.7rem;
+    }
+
+    .bar-container {
+        height: 8px;
     }
 }
