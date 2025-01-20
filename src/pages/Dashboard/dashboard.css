@@ -1,107 +1,27 @@
+/* Default Styles */
 .time-text {
-    font-size: 3.3rem;
+    font-size: 1.2rem;
 }
 
 .day-date-text {
-    font-size: 1.2rem;
+    font-size: 0.75rem;
 }
 
-.dash-board-card {
-    margin-top: 1rem;
-    border-radius: 24px;
-    width: 100%;
-    padding: 1.5rem 1rem;
-    background: #FFFFFF;
-    color: black;
+/* For screens above 1690px */
+@media (min-width: 1690px) {
+    .time-text {
+        font-size: 3.3rem;
+    }
+
+    .day-date-text {
+        font-size: 1.2rem;
+    }
+
+  
 }
 
-
-.card-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-.info p {
-    margin: 5px 0;
-    font-size: 0.9rem;
-    line-height: 1.5;
-}
-
-hr {
-    border: none;
-    border-top: 1px solid #e0e0e0;
-    margin: 15px 0;
-}
-
-.memory-usage {
-    font-size: 0.9rem;
-}
-
-.section-title {
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-/* Usage Bar Styling */
-.usage-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-
-.usage-bar span {
-    font-size: 0.85rem;
-    color: #555;
-}
-
-.bar-container {
-    flex: 1;
-    height: 10px;
-    background: #f0f0f0;
-    border-radius: 5px;
-    margin: 0 10px;
-    overflow: hidden;
-    position: relative;
-}
-
-.bar {
-    height: 100%;
-    border-radius: 5px;
-}
-
-.cpu-bar {
-    background: #00aaff;
-}
-
-.ram-bar {
-    background: #00cc66;
-}
-
-.swap-bar {
-    background: #ffaa00;
-}
-
-.storage {
-    max-height: 321px;
-}
-
-.cpu-ram-usage {
-    height: calc(100% - 415px);
-}
-
-.dashboard-card-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
-.storagetext {
-    font-size: 1.7rem;
-}
-
-/* Media Queries */
-@media (max-width: 1690px) {
+/* For screens between 1440px and 1689px */
+@media (max-width: 1690px) and (min-width: 1441px) {
     .time-text {
         font-size: 2.5rem;
     }
@@ -110,24 +30,11 @@ hr {
         font-size: 1.1rem;
     }
 
-    .storagetext {
-        font-size: 1.5rem;
-    }
-    .cpu-ram-usage-card {
-        max-width: 500px;
-        padding: 25px;
-    }
-
-    .card-title {
-        font-size: 1.4rem;
-    }
-
-    .info p {
-        font-size: 0.95rem;
-    }
+   
 }
 
-@media (max-width: 1440px) {
+/* For screens between 1200px and 1439px */
+@media (max-width: 1440px) and (min-width: 1201px) {
     .time-text {
         font-size: 1.8rem;
     }
@@ -136,24 +43,11 @@ hr {
         font-size: 1rem;
     }
 
-    .storagetext {
-        font-size: 1.5rem;
-    }
-    .cpu-ram-usage-card {
-        max-width: 450px;
-        padding: 20px;
-    }
-
-    .card-title {
-        font-size: 1.3rem;
-    }
-
-    .info p {
-        font-size: 0.85rem;
-    }
+    
 }
 
-@media (max-width: 1200px) {
+/* For screens between 1024px and 1199px */
+@media (max-width: 1200px) and (min-width: 1025px) {
     .time-text {
         font-size: 1.6rem;
     }
@@ -162,94 +56,18 @@ hr {
         font-size: 0.9rem;
     }
 
-    .storage {
-        max-height: 280px;
-    }
-
-    .cpu-ram-usage {
-        height: calc(100% - 415px);
-        /* Ensure proper calculation context */
-    }
-
-    .storagetext {
-        font-size: 1.4rem;
-        /* Avoid using !important unless necessary */
-    }
-    .cpu-ram-usage-card {
-        max-width: 400px;
-        padding: 18px;
-    }
-
-    .card-title {
-        font-size: 1.2rem;
-    }
-
-    .info p {
-        font-size: 0.8rem;
-    }
-
-    .usage-bar span {
-        font-size: 0.8rem;
-    }
+   
 }
 
-@media (max-width: 1024px) {
+/* For screens between 768px and 1023px */
+@media (max-width: 1024px) and (min-width: 769px) {
     .time-text {
-        font-size: 1.2rem;
+        font-size: 1.6rem;
     }
 
     .day-date-text {
-        font-size: 0.75rem;
+        font-size: 0.9rem;
     }
 
-    .storage {
-        max-height: 280px;
-    }
-
-    .cpu-ram-usage {
-        height: calc(100% - 415px);
-    }
-
-    .storagetext {
-        font-size: 1rem;
-    }
-    .cpu-ram-usage-card {
-        padding: 15px;
-    }
-
-    .card-title {
-        font-size: 1.1rem;
-    }
-
-    .info p {
-        font-size: 0.75rem;
-    }
-
-    .usage-bar span {
-        font-size: 0.75rem;
-    }
-}
-
-/* For screens below 768px */
-@media (max-width: 768px) {
-    .cpu-ram-usage-card {
-        padding: 12px;
-        max-width: 100%;
-    }
-
-    .card-title {
-        font-size: 1rem;
-    }
-
-    .info p {
-        font-size: 0.7rem;
-    }
-
-    .usage-bar span {
-        font-size: 0.7rem;
-    }
-
-    .bar-container {
-        height: 8px;
-    }
+    
 }

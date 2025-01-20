@@ -50,7 +50,7 @@ const Designation = () => {
           }}
         />
       </div>
-      <PopupDialog
+      {/* <PopupDialog
         isOpen={isDialogOpen}
         onClose={() => setIsDialogOpen(false)}
         title="Add Designation"
@@ -58,7 +58,7 @@ const Designation = () => {
         width="500px"
       >
         <Forms onSubmitForm={handleFormSubmit} formFields={formFields} />
-      </PopupDialog>
+      </PopupDialog> */}
 
     </div>
   )

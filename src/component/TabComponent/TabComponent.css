@@ -1,12 +1,15 @@
-.tab-button{
+/* Base Styles for Tab Button */
+.tab-button {
     position: relative;
     z-index: 100;
 }
-.tab-button.active{
+
+.tab-button.active {
     background: #F1F2F6;
 }
 
-.tab-button-backg{
+/* Tab Button Background Styles */
+.tab-button-backg {
     width: 140px;
     height: 100px;
     background-color: #ffff;
@@ -17,7 +20,8 @@
     border-top-right-radius: 2rem;
     transition: all .3s ease-in-out;
 }
-.tab-button-backg::before{
+
+.tab-button-backg::before {
     position: absolute;
     content: "";
     bottom: 20%;
@@ -30,7 +34,8 @@
     box-shadow: 0.313rem 0.313rem 0px 0.313rem #ffff;
     transition: all 0.3s ease-in-out;
 }
-.tab-button-backg::after{
+
+.tab-button-backg::after {
     position: absolute;
     content: "";
     bottom: 20%;
@@ -38,55 +43,131 @@
     background: transparent;
     width: 2rem;
     height: 2rem;
-    /* transform: rotate(90deg); */
     border-bottom-right-radius: 2.5rem;
     box-shadow: 0.313rem 0.313rem 0px 0.313rem #ffff;
     transition: all 0.3s ease-in-out;
 }
 
-.tab-card{
+.tab-card {
     z-index: 100;
     position: relative;
+    height: calc(100dvh - 30vh);
 }
+
 .tab-button-backg.hide-after::after {
     content: none;
 }
+
 .tab-button-backg.hide-before::before {
     content: none;
 }
 
+/* Media Queries for Responsiveness */
 
+/* For screens smaller than 768px (Mobile devices) */
+@media (max-width: 768px) {
+    .tab-button {
+        padding: 10px;  /* Smaller padding for mobile */
+        font-size: 0.85rem;  /* Smaller font size */
+    }
 
+    .tab-button-backg {
+        width: 100px;  /* Reduce size for mobile */
+        height: 70px;  /* Adjust height */
+        top: -5%;  /* Adjust positioning */
+    }
+    
 
+    .tab-button-backg::before,
+    .tab-button-backg::after {
+        width: 1.5rem;  /* Smaller icon size */
+        height: 1.5rem;  /* Adjust icon size */
+    }
 
-@media screen and (min-width: 1440px) {
     .tab-card {
-        min-height: 750px !important; /* Increase the height */
+        height: calc(100dvh - 20vh);  /* Adjust tab card height */
     }
-    .tab-button-backg::before{
-        position: absolute;
-        content: "";
-        bottom: 13%;
-        right: -15%;
-        background: transparent;
-        width: 2rem;
-        height: 2rem;
-        transform: rotate(90deg);
-        border-bottom-right-radius: 2.5rem;
-        box-shadow: 0.313rem 0.313rem 0px 0.313rem #fffd;
-        transition: all 0.3s ease-in-out;
+}
+
+/* For screens between 768px and 1024px (Tablets) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .tab-button {
+        padding: 15px;  /* Medium padding for tablets */
+        font-size: 1rem;  /* Adjust font size */
     }
-    .tab-button-backg::after{
-        position: absolute;
-        content: "";
-        bottom: 13%;
-        left: -15%;
-        background: transparent;
-        width: 2rem;
-        height: 2rem;
-        /* transform: rotate(90deg); */
-        border-bottom-right-radius: 2.5rem;
-        box-shadow: 0.313rem 0.313rem 0px 0.313rem #ffff;
-        transition: all 0.3s ease-in-out;
-    }    
+
+    .tab-button-backg {
+        width: 120px;  /* Adjust size for tablets */
+        height: 80px;  /* Adjust height */
+        top: -3%;  /* Keep the original positioning */
+    }
+
+    .tab-button-backg::before,
+    .tab-button-backg::after {
+        width: 1.8rem;  /* Adjust icon size */
+        height: 1.8rem;  /* Adjust icon size */
+    }
+
+    .tab-card {
+        height: calc(100dvh - 25vh);  /* Adjust tab card height */
+    }
+}
+
+/* For screens larger than 1024px and smaller than 1200px (Desktops) */
+@media (min-width: 1024px) and (max-width: 1200px) {
+    .tab-button {
+        padding: 20px;  /* Larger padding for desktop */
+        font-size: 1.2rem;  /* Larger font size */
+    }
+
+    .tab-button-backg {
+        width: 140px;  /* Default size for desktop */
+        height: 100px;  /* Default height */
+        top: -3%;  /* Default positioning */
+    }
+
+    .tab-button-backg::before,
+    .tab-button-backg::after {
+        width: 2rem;  /* Default icon size */
+        height: 2rem;  /* Default icon size */
+    }
+
+    .tab-component-svg{
+        height: 2.3rem;
+        width: 2.3rem;
+    }
+
+    .tab-card {
+        height: calc(100dvh - 30vh);  /* Default tab card height */
+    }
+}
+
+/* For screens between 1200px and 1600px */
+@media (min-width: 1200px) and (max-width: 1600px) {
+    .tab-button {
+        padding: 25px ;  /* Larger padding for desktop */
+        font-size: 1.2rem;  /* Larger font size */
+        background: #000;
+    }
+
+    .tab-button-backg {
+        width: 140px;  /* Default size for desktop */
+        height: 100px;  /* Default height */
+        top: -3%;  /* Default positioning */
+    }
+
+    .tab-button-backg::before,
+    .tab-button-backg::after {
+        width: 2rem;  /* Default icon size */
+        height: 2rem;  /* Default icon size */
+    }
+    .tab-component-svg{
+        height: 2.5rem;
+        width: 2.5rem;
+        background: #000;
+    }
+
+    .tab-card {
+        height: calc(100dvh - 30vh);  /* Default tab card height */
+    }
 }

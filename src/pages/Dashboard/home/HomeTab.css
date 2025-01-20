@@ -1,0 +1,58 @@
+.home-tab-card {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+}
+
+/* Default Styles */
+.home-tab-card h5 {
+    font-size: 1rem; /* Base size for laptops */
+}
+
+.home-tab-card-status-text {
+    font-size: 1rem; /* Base size for laptops */
+}
+
+.home-tab-img {
+    height: auto; /* Default image height */
+}
+
+/* Media Queries */
+@media (min-width: 1024px) and (max-width: 1199px) {
+    .home-tab-card h5 {
+        font-size: 1rem; /* For laptops */
+    }
+    .home-tab-card-status-text {
+        font-size: 1rem; /* For laptops */
+    }
+    .home-tab-img {
+        height: 120px; /* Adjust image height for laptops */
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1689px) {
+    .home-tab-card h5 {
+        font-size: 1.2rem; /* Slightly larger font for medium screens */
+    }
+    .home-tab-card-status-text {
+        font-size: 1.4rem; /* Slightly larger font for medium screens */
+    }
+}
+
+@media (min-width: 1690px) and (max-width: 1979px) {
+    .home-tab-card h5 {
+        font-size: 1.5rem; /* Larger font for big screens */
+    }
+    .home-tab-card-status-text {
+        font-size: 2rem; /* Larger font for big screens */
+    }
+}
+
+@media (min-width: 1980px) {
+    .home-tab-card h5 {
+        font-size: 2rem; /* Largest font for extra-large screens */
+    }
+    .home-tab-card-status-text {
+        font-size: 3rem; /* Largest font for extra-large screens */
+    }
+}

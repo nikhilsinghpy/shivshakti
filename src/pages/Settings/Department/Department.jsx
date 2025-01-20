@@ -53,7 +53,7 @@ const Department = () => {
         />
       </div>
 
-      <PopupDialog
+      {/* <PopupDialog
         isOpen={isDialogOpen}
         onClose={() => setIsDialogOpen(false)}
         title="Add Department"
@@ -61,7 +61,7 @@ const Department = () => {
         width="500px"
       >
         <Forms onSubmitForm={handleFormSubmit} formFields={formFields} />
-      </PopupDialog>
+      </PopupDialog> */}
     </div>
   )
 }

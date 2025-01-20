@@ -37,7 +37,7 @@ const TabComponent = ({ navItems, tabContents }) => {
                 }`}
               >
                 <span
-                  className={`w-7 h-7 rounded-full p-2 flex justify-center items-center ${
+                  className={`w-7 h-7 tab-component-svg rounded-full p-2 flex justify-center items-center ${
                     activeIndex === index
                       ? 'bg-blue-500 text-white'
                       : ' bg-gray-200'
@@ -50,7 +50,7 @@ const TabComponent = ({ navItems, tabContents }) => {
             ))}
           </nav>
           <div className="tab-button-backg"></div>
-          <div className="tab-card bg-white w-full mt-5 min-h-[400px] rounded-2xl p-4">
+          <div className="tab-card bg-white w-full mt-5  rounded-2xl p-4">
             {tabContents?.length > 0 ? tabContents[activeIndex] : null}
           </div>
         </div>
