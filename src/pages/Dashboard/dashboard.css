@@ -7,14 +7,88 @@
     font-size: 0.75rem;
 }
 
+.time-component h3{
+    font-size: 1.3rem !important;
+}
+.time-component span p {
+    margin: 0 !important;
+    font-size: 10px;
+}
+.storagetext{
+    font-size: .7rem !important;
+}
+.storage-usage-percentage img{
+    object-position: center center !important;
+}
+
+.dashboard-card-title{
+    font-size: 1rem !important;
+}
+
+.device-info-title{
+    font-size: 12px;
+    color: #80848C;
+}
+.device-info-content{
+    font-size: 12px;
+    color: #80848C;
+}
+.usage-card{
+    font-size: 12px;
+    color: #5b5e63;
+}
+
+.status-text{
+    font-size: 10px;
+}
+.progres-bar{
+    height: 10px;
+}
+
 /* For screens above 1690px */
 @media (min-width: 1690px) {
     .time-text {
         font-size: 3.3rem;
     }
 
+    .dashboard-card-title{
+        font-size: 2.3rem !important;
+    }
     .day-date-text {
         font-size: 1.2rem;
+    }
+
+    .time-component h3{
+        font-size: 2rem !important;
+    }
+    .time-component span p {
+        margin: 0 !important;
+        font-size: 16px;
+    }
+    .storagetext{
+        font-size: 1.3rem !important;
+    }
+
+
+    .device-info-title{
+        font-size: 1.4rem;
+        color: #80848C;
+    }
+    .device-info-content{
+        font-size: 1.4rem;
+        color: #80848C;
+    }
+    .usage-card{
+        font-size: 1.6rem;
+        color: #5b5e63;
+    }
+    
+    .status-text{
+        font-size: 1.2rem;
+    }
+    .progres-bar{
+        height: 25px;
+        border-radius: 1rem;
     }
 
   
@@ -30,7 +104,33 @@
         font-size: 1.1rem;
     }
 
-   
+    .time-component h3{
+        font-size: 1.7rem !important;
+    }
+    .time-component span p {
+        margin: 0 !important;
+        font-size: 14px;
+    }
+    .storagetext{
+        font-size: 1.1rem !important;
+    }
+    .dashboard-card-title{
+        font-size: 1.7rem !important;
+    }
+
+
+    .usage-card{
+        font-size: 1.4rem;
+        color: #5b5e63;
+    }
+    
+    .status-text{
+        font-size: 1.1rem;
+    }
+    .progres-bar{
+        height: 20px;
+        border-radius: 1rem;
+    }
 }
 
 /* For screens between 1200px and 1439px */
@@ -43,6 +143,33 @@
         font-size: 1rem;
     }
 
+    .time-component h3{
+        font-size: 1.5rem !important;
+    }
+    .time-component span p {
+        margin: 0 !important;
+        font-size: 12px;
+    }
+    .storagetext{
+        font-size: 1rem !important;
+    }
+    .dashboard-card-title{
+        font-size: 1.2rem !important;
+    }
+
+
+    .usage-card{
+        font-size: 1.2rem;
+        color: #5b5e63;
+    }
+    
+    .status-text{
+        font-size: 1rem;
+    }
+    .progres-bar{
+        height: 15px;
+        border-radius: 1rem;
+    }
     
 }
 
@@ -54,6 +181,26 @@
 
     .day-date-text {
         font-size: 0.9rem;
+    }
+    .time-component h3{
+        font-size: 1.3rem !important;
+    }
+    .time-component span p {
+        margin: 0 !important;
+        font-size: 12px;
+    }
+
+    .usage-card{
+        font-size: 1rem;
+        color: #5b5e63;
+    }
+    
+    .status-text{
+        font-size: 1rem;
+    }
+    .progres-bar{
+        height: 12px;
+        border-radius: 1rem;
     }
 
    
@@ -68,6 +215,4 @@
     .day-date-text {
         font-size: 0.9rem;
     }
-
-    
 }
