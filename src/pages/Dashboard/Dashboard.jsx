@@ -1,18 +1,16 @@
-import { BottomNav } from '../../component/BottomNav/BottomNav'
+
 import TabComponent from '../../component/TabComponent/TabComponent'
 import './dashboard.css'
 import { Home, Volume2, Mic, Calendar, MapPin } from 'lucide-react'
-import { Doughnut } from 'react-chartjs-2'
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 import { HomeTab } from './home/HomeTab'
 import { Speaker } from './speaker/Speaker'
 import { Announcers } from './Announcers/Announcers'
 import { Schedule } from './Schedule/Schedule'
 import { Zones } from './Zones/Zones'
 import img from '../../assets/roundedchart.svg'
+import { BottomNav } from '../../component/BottomNav/BottomNav'
 
 // Register required Chart.js components
-ChartJS.register(ArcElement, Tooltip, Legend)
 export const Dashboard = () => {
   const navItems = [
     { label: 'Home', icon: <Home />, active: true },
@@ -21,25 +19,6 @@ export const Dashboard = () => {
     { label: 'Schedule', icon: <Calendar />, active: false },
     { label: 'Zones', icon: <MapPin />, active: false },
   ]
-  const data = {
-    labels: ['Used', 'Available'],
-    datasets: [
-      {
-        data: [60, 40], // Adjust percentages here
-        backgroundColor: ['#00ADEE', '#e0fff0'], // Colors for Used and Available
-        borderWidth: 0, // Removes border from segments
-      },
-    ],
-  }
-
-  const options = {
-    cutout: '75%', // Adjust for the thickness of the chart
-    plugins: {
-      legend: {
-        display: false, // Hides the default legend
-      },
-    },
-  }
 
   const tabContents = [
     <HomeTab />,
@@ -49,8 +28,6 @@ export const Dashboard = () => {
     <Zones />,
   ]
 
-  const percentageUsed = 50 // Storage used in percentage
-  const percentageAvailable = 100 - percentageUsed
   return (
     <>
       <div className="flex w-full h-screen">
@@ -149,6 +126,7 @@ export const Dashboard = () => {
           </div>
         </div>
       </div>
+      <BottomNav/>
     </>
   )
 }

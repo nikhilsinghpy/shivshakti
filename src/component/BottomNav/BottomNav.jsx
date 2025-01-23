@@ -1,42 +1,59 @@
-import { CircleX, List, Music, Play, Volume1, Volume2, VolumeOff } from "lucide-react";
-import React from "react";
-import Polygon from "../../assets/Polygon 2.png"
-import "./BottomNav.css"
+import React from 'react';
+import {
+  CircleX,
+  List,
+  Music,
+  Play,
+  Volume1,
+  Volume2,
+  VolumeOff,
+} from 'lucide-react';
+import './BottomNav.css'; // Assuming styles are in a separate CSS file
 
 export const BottomNav = () => {
   return (
-    <div
-      className="absolute bottom-5 left-65 w-[800px] bg-gray-800 shadow-lg rounded-2xl p-3 flex gap-2"
-      style={{ zIndex: 600, left: "20%" }}
-    >
-      <div className="button-item w-full min-h-[50px] flex items-center justify-center flex-col border-r-1 border-gray-600">
-        <button className="bg-[#EE786C] text-white p-2 rounded-full"><CircleX /></button>
-        <p className="text-white font-[500] text-[12px] mt-2">Hang Up</p>
+    <div className="bottom-nav">
+      <div className="button-item">
+        <button className="button bg-red">
+          <CircleX />
+        </button>
+        <p>Hang Up</p>
       </div>
-      <div className="button-item w-full min-h-[50px] flex items-center justify-center flex-col border-r-1 border-gray-600">
-        <button className="bg-[#FEC610] text-white p-2 rounded-full"><Play /></button>
-        <p className="text-white font-[500] text-[12px] mt-2">Quick Play</p>
+      <div className="button-item">
+        <button className="button bg-yellow">
+          <Play />
+        </button>
+        <p>Quick Play</p>
       </div>
-      <div className="button-item w-full min-h-[50px] flex items-center justify-center flex-col border-r-1 border-gray-600">
-        <button className="bg-[#D9D9D91C] text-white p-2 rounded-full"><List /></button>
-        <p className="text-white font-[500] text-[12px] mt-2">Playlist</p>
+      <div className="button-item">
+        <button className="button bg-light">
+          <List />
+        </button>
+        <p>Playlist</p>
       </div>
-
-      <div className="button-item w-full min-h-[50px] flex items-center justify-center flex-col border-r-1 border-gray-600">
-        <button className="bg-[#D9D9D91C] text-white p-2 rounded-full"><Music /></button>
-        <p className="text-white font-[500] text-[12px] mt-2">Audio list</p>
+      <div className="button-item">
+        <button className="button bg-light">
+          <Music />
+        </button>
+        <p>Audio list</p>
       </div>
-      <div className="button-item w-full min-h-[50px] flex items-center justify-center flex-col border-r-1 border-gray-600">
-        <button className="bg-[#D9D9D91C] text-white p-2 rounded-full"><Volume1 /></button>
-        <p className="text-white font-[500] text-[12px] mt-2">Volume</p>
+      <div className="button-item">
+        <button className="button bg-light">
+          <Volume1 />
+        </button>
+        <p>Volume</p>
       </div>
-      <div className="button-item w-full min-h-[50px] flex items-center justify-center flex-col border-r-1 border-gray-600">
-        <button className="bg-[#D9D9D91C] text-white p-2 rounded-full"><Volume2 /></button>
-        <p className="text-white font-[500] text-[12px] mt-2">All Volume</p>
+      <div className="button-item">
+        <button className="button bg-light">
+          <Volume2 />
+        </button>
+        <p>All Volume</p>
       </div>
-      <div className="button-item w-full min-h-[50px] flex items-center justify-center flex-col ">
-        <button className="bg-[#D9D9D91C] text-white p-2 rounded-full"><VolumeOff /></button>
-        <p className="text-white font-[500] text-[12px] mt-2">Silent time</p>
+      <div className="button-item">
+        <button className="button bg-light">
+          <VolumeOff />
+        </button>
+        <p>Silent time</p>
       </div>
     </div>
   );

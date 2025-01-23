@@ -52,7 +52,7 @@
     }
 
     .dashboard-card-title{
-        font-size: 2.3rem !important;
+        font-size: 1.8rem !important;
     }
     .day-date-text {
         font-size: 1.2rem;
@@ -71,15 +71,15 @@
 
 
     .device-info-title{
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         color: #80848C;
     }
     .device-info-content{
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         color: #80848C;
     }
     .usage-card{
-        font-size: 1.6rem;
+        font-size: 1.2rem;
         color: #5b5e63;
     }
     
@@ -87,7 +87,7 @@
         font-size: 1.2rem;
     }
     .progres-bar{
-        height: 25px;
+        height: 18px;
         border-radius: 1rem;
     }
 
@@ -120,7 +120,7 @@
 
 
     .usage-card{
-        font-size: 1.4rem;
+        font-size: 1rem;
         color: #5b5e63;
     }
     
@@ -128,7 +128,7 @@
         font-size: 1.1rem;
     }
     .progres-bar{
-        height: 20px;
+        height: 18px;
         border-radius: 1rem;
     }
 }
@@ -156,15 +156,18 @@
     .dashboard-card-title{
         font-size: 1.2rem !important;
     }
+    .device-info-content{
+        font-size: 11px;
+    }
 
 
     .usage-card{
-        font-size: 1.2rem;
+        font-size: 1rem;
         color: #5b5e63;
     }
     
     .status-text{
-        font-size: 1rem;
+        font-size: 12px;
     }
     .progres-bar{
         height: 15px;
@@ -196,23 +199,15 @@
     }
     
     .status-text{
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
     .progres-bar{
-        height: 12px;
+        height: 8px;
         border-radius: 1rem;
     }
-
-   
-}
-
-/* For screens between 768px and 1023px */
-@media (max-width: 1024px) and (min-width: 769px) {
-    .time-text {
-        font-size: 1.6rem;
-    }
-
-    .day-date-text {
-        font-size: 0.9rem;
+    .device-info-content{
+        font-size: 10px;
+        color: #80848C;
     }
 }
+
