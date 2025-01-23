@@ -9,8 +9,8 @@
   border-radius: 1vh; 
   position: absolute;
   bottom: 2%;
-  left: 53%;
-  transform: translateX(-54%);
+  left: 50%;
+  transform: translateX(-50%);
   padding: 1.5rem 1rem;
   z-index: 999;
 }

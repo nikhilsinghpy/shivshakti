@@ -33,6 +33,8 @@ export const Dashboard = () => {
       <div className="flex w-full h-screen">
         <div className="w-[77.49%] bg-gray-100 p-4">
           <TabComponent navItems={navItems} tabContents={tabContents} />
+
+          <BottomNav/>
         </div>
         <div className="w-[22.51%]  p-4">
           <div className="flex flex-col gap-[.8rem]">
@@ -126,7 +128,6 @@ export const Dashboard = () => {
           </div>
         </div>
       </div>
-      <BottomNav/>
     </>
   )
 }
