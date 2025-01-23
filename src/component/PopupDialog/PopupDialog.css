@@ -1,0 +1,14 @@
+.pop-dialog-continer{
+    width: 100%;
+    height: 100vh;
+    background: #0000007c;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+
+}
+
+.pop-dialog-continer.open{
+  
+}

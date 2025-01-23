@@ -1,7 +1,7 @@
 /* Base Styles for Tab Button */
 .tab-button {
     position: relative;
-    z-index: 100;
+    z-index: 10;
 }
 
 .tab-button.active {
@@ -49,7 +49,7 @@
 }
 
 .tab-card {
-    z-index: 100;
+    z-index: 10;
     position: relative;
     height: calc(100dvh - 30vh);
 }

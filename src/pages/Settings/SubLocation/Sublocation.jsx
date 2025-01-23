@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import './Sublocation.css'
-import PopupDialog from '../../../component/PopupDialog/PopupDialog '
 import Forms from '../../../component/Forms/Forms'
 import Breadcrumb from '../../../component/Breadcrumb/Breadcrumb';
 import DataTable from '../../../component/DataTable/DataTable';
+import { PopupDialog } from '../../../component/PopupDialog/PopupDialog ';
 
 const Sublocation = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false)

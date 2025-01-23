@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import Breadcrumb from '../../../component/Breadcrumb/Breadcrumb';
 import DataTable from '../../../component/DataTable/DataTable';
-import PopupDialog from '../../../component/PopupDialog/PopupDialog ';
+import {PopupDialog} from '../../../component/PopupDialog/PopupDialog ';
 import Forms from '../../../component/Forms/Forms';
 export const Location = () => {
   const exampleData = []

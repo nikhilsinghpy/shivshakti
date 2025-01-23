@@ -23,7 +23,7 @@ export const ReportSetting = () => {
   ];
   return (
     <div className='flex justify-start items-start px-[2rem] py-[3rem] gap-4'>
-      <IconCard data={cardData} cardClass='w-[270px] h-[250px] above1440:w-[330px] above1440:h-[300px]'/>
+      <IconCard data={cardData} />
     </div>
   )
 }

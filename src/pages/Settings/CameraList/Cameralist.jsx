@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import "./Cameralist.css";
 import Breadcrumb from '../../../component/Breadcrumb/Breadcrumb';
 import DataTable from '../../../component/DataTable/DataTable';
-import PopupDialog from '../../../component/PopupDialog/PopupDialog ';
 import Forms from '../../../component/Forms/Forms';
 import BigForms from '../../../component/Forms/BigForms';
+import { PopupDialog } from '../../../component/PopupDialog/PopupDialog ';
 const Cameralist = () => {
 
     const [isDialogOpen, setIsDialogOpen] = useState(false)

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Breadcrumb from '../../../component/Breadcrumb/Breadcrumb';
 import DataTable from '../../../component/DataTable/DataTable';
 import "./Designation.css";
-import PopupDialog from '../../../component/PopupDialog/PopupDialog ';
+import {PopupDialog} from '../../../component/PopupDialog/PopupDialog ';
 import Forms from '../../../component/Forms/Forms';
 
 const Designation = () => {
@@ -50,7 +50,7 @@ const Designation = () => {
           }}
         />
       </div>
-      {/* <PopupDialog
+      <PopupDialog
         isOpen={isDialogOpen}
         onClose={() => setIsDialogOpen(false)}
         title="Add Designation"
@@ -58,7 +58,7 @@ const Designation = () => {
         width="500px"
       >
         <Forms onSubmitForm={handleFormSubmit} formFields={formFields} />
-      </PopupDialog> */}
+      </PopupDialog>
 
     </div>
   )

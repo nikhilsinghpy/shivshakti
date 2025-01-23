@@ -17,8 +17,8 @@
 .tab-button-backg-import::before{
     position: absolute;
     content: "";
-    bottom: 15%;
-    right: -8%;
+    bottom: 25%;
+    right: -9%;
     background: transparent;
     width: 2rem;
     height: 2rem;
@@ -30,8 +30,8 @@
 .tab-button-backg-import::after{
     position: absolute;
     content: "";
-    bottom: 15%;
-    left: -8%;
+    bottom: 25%;
+    left: -9%;
     background: transparent;
     width: 2rem;
     height: 2rem;
@@ -44,10 +44,9 @@
 .tab-card-import{
     z-index: 100;
     position: relative;
+    height: calc(100vh - 50vh);
 }
 
 @media screen and (min-width: 1920px) {
-    .tab-card-import {
-        min-height: 720px !important; /* Increase the height */
-    }
+
 }

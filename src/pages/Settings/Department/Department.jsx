@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Breadcrumb from '../../../component/Breadcrumb/Breadcrumb';
 import DataTable from '../../../component/DataTable/DataTable';
 import "./Department.css";
-import PopupDialog from '../../../component/PopupDialog/PopupDialog ';
+import {PopupDialog} from '../../../component/PopupDialog/PopupDialog ';
 import Forms from '../../../component/Forms/Forms';
 
 const Department = () => {
@@ -53,7 +53,7 @@ const Department = () => {
         />
       </div>
 
-      {/* <PopupDialog
+      <PopupDialog
         isOpen={isDialogOpen}
         onClose={() => setIsDialogOpen(false)}
         title="Add Department"
@@ -61,7 +61,7 @@ const Department = () => {
         width="500px"
       >
         <Forms onSubmitForm={handleFormSubmit} formFields={formFields} />
-      </PopupDialog> */}
+      </PopupDialog>
     </div>
   )
 }
