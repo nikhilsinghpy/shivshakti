@@ -2,6 +2,43 @@
     width: 15rem;
     height: 15rem;
 }
+.icon-card-logo{
+    width: 4rem;
+    height: 4rem;
+}
+.icon-card-icon{
+    width: 1.7rem;
+    height: 1.7rem;
+}
+@media (min-width: 1093px) and (max-width: 1184px) {
+    .icon-card{
+        width: 11rem;
+        height: 11rem;
+    } 
+    .icon-card-icon{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    
+    .icon-card-logo{
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+}
+@media (min-width: 768px) and (max-width: 1093px) {
+    .icon-card{
+        width: 9rem;
+        height: 9rem;
+    }
+    .icon-card-logo{
+        width: 3rem;
+        height: 3rem;
+    } 
+    .icon-card-icon{
+        width: 1.3rem;
+        height: 1.3rem;
+    }  
+}
 @media  (min-width: 1500px) {
     .icon-card{
         width: 17rem;
