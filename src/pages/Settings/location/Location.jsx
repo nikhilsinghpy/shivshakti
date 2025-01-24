@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 
 import Breadcrumb from '../../../component/Breadcrumb/Breadcrumb';
 import DataTable from '../../../component/DataTable/DataTable';
-import {PopupDialog} from '../../../component/PopupDialog/PopupDialog ';
 import Forms from '../../../component/Forms/Forms';
+import PopupDialog from '../../../component/PopupDialog/PopupDialog ';
 export const Location = () => {
   const exampleData = []
   const [isDialog, setIsDialogOpen] = useState(false);

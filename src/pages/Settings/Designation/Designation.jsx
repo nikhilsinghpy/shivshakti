@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Breadcrumb from '../../../component/Breadcrumb/Breadcrumb';
 import DataTable from '../../../component/DataTable/DataTable';
 import "./Designation.css";
-import {PopupDialog} from '../../../component/PopupDialog/PopupDialog ';
 import Forms from '../../../component/Forms/Forms';
+import PopupDialog from '../../../component/PopupDialog/PopupDialog ';
 
 const Designation = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false)

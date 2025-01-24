@@ -9,6 +9,7 @@
 
 .time-component h3{
     font-size: 1.3rem !important;
+    text-align: center;
 }
 .time-component span p {
     margin: 0 !important;
@@ -112,10 +113,10 @@
         font-size: 14px;
     }
     .storagetext{
-        font-size: 1.1rem !important;
+        font-size: 1rem !important;
     }
     .dashboard-card-title{
-        font-size: 1.7rem !important;
+        font-size: 1.5rem !important;
     }
 
 
@@ -151,7 +152,7 @@
         font-size: 12px;
     }
     .storagetext{
-        font-size: 1rem !important;
+        font-size: .8rem !important;
     }
     .dashboard-card-title{
         font-size: 1.2rem !important;
@@ -208,6 +209,9 @@
     .device-info-content{
         font-size: 10px;
         color: #80848C;
+    }
+    .storagetext{
+        font-size: 12px;
     }
 }
 

@@ -7,12 +7,16 @@
 /* Default Styles */
 .home-tab-card h5 {
     font-size: 1rem; /* Base size for laptops */
+    text-align: center;
 }
 
 .home-tab-card-status-text {
     font-size: 1rem; /* Base size for laptops */
 }
 
+.home-tab-img{
+    padding: 1.5rem;
+}
 .home-tab-img {
     height: auto; /* Default image height */
 }

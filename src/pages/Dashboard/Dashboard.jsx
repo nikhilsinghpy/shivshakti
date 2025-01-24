@@ -9,9 +9,33 @@ import { Schedule } from './Schedule/Schedule'
 import { Zones } from './Zones/Zones'
 import img from '../../assets/roundedchart.svg'
 import { BottomNav } from '../../component/BottomNav/BottomNav'
+import { useEffect, useState } from 'react'
+
+
+
+function getCurrentDateTime() {
+  const now = new Date();
+
+  // Format time
+  const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
+
+  // Get weekday, month, and numeric day
+  const dayOfWeek = now.toLocaleString('default', { weekday: 'long' }); // e.g., "Monday"
+  const month = now.toLocaleString('default', { month: 'long' }); // e.g., "March"
+  const dayOfMonth = now.getDate(); // e.g., 28
+
+  return { time, dayOfWeek, month, dayOfMonth };
+}
+
 
 // Register required Chart.js components
 export const Dashboard = () => {
+
+  const [currentDateTime, setCurrentDateTime] = useState(getCurrentDateTime());
+
+
+  const { time, dayOfWeek, month, dayOfMonth } = currentDateTime;
+
   const navItems = [
     { label: 'Home', icon: <Home />, active: true },
     { label: 'Speakers', icon: <Volume2 />, active: false },
@@ -28,6 +52,15 @@ export const Dashboard = () => {
     <Zones />,
   ]
 
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentDateTime(getCurrentDateTime());
+    }, 1000); // Updates every second
+
+    return () => clearInterval(interval); // Cleanup the interval on unmount
+  }, [])
+
   return (
     <>
       <div className="flex w-full h-screen">
@@ -40,10 +73,10 @@ export const Dashboard = () => {
           <div className="flex flex-col gap-[.8rem]">
             {/* First Card */}
             <div className="h-[7.9vh] bg-[#292D32] rounded-[12px] flex items-center justify-evenly text-white time-component">
-              <h3>12:00 AM</h3>
-              <span className="flex flex-col items-start">
-                <p>Monday</p>
-                <p>28 November</p>
+              <h3>{time}</h3>
+              <span className="flex flex-col items-center">
+                <p>{dayOfWeek}</p>
+                <p>{dayOfMonth} {month}</p>
               </span>
             </div>
 
@@ -52,21 +85,21 @@ export const Dashboard = () => {
               <div className="flex  gap-2 flex-col">
                 <h3 className='dashboard-card-title'>Storage</h3>
                 <div className='flex'>
-                <div className="storage-usage-content w-[40%] mt-3">
+                <div className="storage-usage-content w-[50%] mt-3">
                 <p className="flex items-center storagetext">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#0099FF] mr-2"></span>{' '}
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#0099FF] mr-2"></span>
                   50% Used
                 </p>
                 <p className="flex items-center storagetext">
-                  <span className="w-2 h-2 rounded-full bg-[#E0EFDF] mr-2"></span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#E0EFDF] mr-2"></span>
                   <br /> 50% Available
                 </p>
               </div>
-                <div className="storage-usage-percentage w-[60%]">
+                <div className="storage-usage-percentage w-[50%]">
                   <img
                     src={img}
                     alt="Storage Image"
-                    className="w-full h-auto"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 </div>

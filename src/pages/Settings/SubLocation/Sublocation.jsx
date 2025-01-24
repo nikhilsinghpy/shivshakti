@@ -3,7 +3,7 @@ import './Sublocation.css'
 import Forms from '../../../component/Forms/Forms'
 import Breadcrumb from '../../../component/Breadcrumb/Breadcrumb';
 import DataTable from '../../../component/DataTable/DataTable';
-import { PopupDialog } from '../../../component/PopupDialog/PopupDialog ';
+import PopupDialog from '../../../component/PopupDialog/PopupDialog ';
 
 const Sublocation = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false)

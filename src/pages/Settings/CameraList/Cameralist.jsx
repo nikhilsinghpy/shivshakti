@@ -4,7 +4,7 @@ import Breadcrumb from '../../../component/Breadcrumb/Breadcrumb';
 import DataTable from '../../../component/DataTable/DataTable';
 import Forms from '../../../component/Forms/Forms';
 import BigForms from '../../../component/Forms/BigForms';
-import { PopupDialog } from '../../../component/PopupDialog/PopupDialog ';
+import PopupDialog from '../../../component/PopupDialog/PopupDialog ';
 const Cameralist = () => {
 
     const [isDialogOpen, setIsDialogOpen] = useState(false)

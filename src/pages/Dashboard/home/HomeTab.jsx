@@ -49,10 +49,11 @@ export const HomeTab = () => {
       {cardata?.map((data, index) => (
         <div className={`${data.background} home-tab-card p-4`} key={index}>
           <h5 className={`${data.textcolor}`}>{data.title}</h5>
-          <div className="flex justify-evenly items-center h-[auto]">
-            <div className="w-[60%] p-[1rem]">
+          <div className="flex justify-evenly items-center h-[85%]">
+            <div className="w-[70%] p-[1rem]">
+
               <div className="flex justify-between items-center">
-                <div className="flex flex-col">
+                <div className="flex flex-col  text-center items-center">
                   <h1 className={`${data.textcolor} home-tab-card-status-text`}>
                     {data.online}
                   </h1>
@@ -61,10 +62,8 @@ export const HomeTab = () => {
                     <span className="w-2 h-2 rounded-full bg-[#2AE91D] mr-2 above1440:w-3 above1440:h-3"></span>
                   </div>
                 </div>
-                <div
-                  className={`${data.bordercolor} h-10 w-px opacity-50`}
-                ></div>
-                <div className="flex flex-col">
+                <div className={`${data.bordercolor} h-10 w-px opacity-50`} style={{marginLeft: '-.8rem'}}></div>
+                <div className="flex flex-col text-center items-center">
                   <h1 className={`${data.textcolor} home-tab-card-status-text`}>
                     {data.offline}
                   </h1>
@@ -75,12 +74,14 @@ export const HomeTab = () => {
                 </div>
               </div>
             </div>
-            <div className="w-[40%] flex items-center justify-center p-[1rem] home-tab-img">
-              <img
-                src={data.icon}
-                alt={data.title}
-                className="w-full h-full object-contain"
-              />
+            <div className="w-[30%] flex items-center justify-center  ">
+              <div className='home-tab-img'>
+                <img
+                  src={data.icon}
+                  alt={data.title}
+                  className="w-full h-full object-contain"
+                />
+              </div>
             </div>
           </div>
         </div>
