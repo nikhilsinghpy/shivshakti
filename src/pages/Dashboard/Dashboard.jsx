@@ -10,6 +10,7 @@ import { Zones } from './Zones/Zones'
 import img from '../../assets/roundedchart.svg'
 import { BottomNav } from '../../component/BottomNav/BottomNav'
 import { useEffect, useState } from 'react'
+import { getapi } from '../../api/GetAPI'
 
 
 
@@ -33,6 +34,8 @@ export const Dashboard = () => {
 
   const [currentDateTime, setCurrentDateTime] = useState(getCurrentDateTime());
 
+  const [dashboardData , setdashboardData] = useState({})
+
 
   const { time, dayOfWeek, month, dayOfMonth } = currentDateTime;
 
@@ -45,7 +48,7 @@ export const Dashboard = () => {
   ]
 
   const tabContents = [
-    <HomeTab />,
+    <HomeTab  data={dashboardData}/>,
     <Speaker />,
     <Announcers />,
     <Schedule />,
@@ -60,6 +63,20 @@ export const Dashboard = () => {
 
     return () => clearInterval(interval); // Cleanup the interval on unmount
   }, [])
+
+
+
+  const fetchData = async () =>{
+    try {
+      const response = await getapi(`dashboarddatanew.php`)
+      setdashboardData(response)
+    } catch (error) {
+      throw new Error(error)
+    }
+  }
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -88,11 +105,11 @@ export const Dashboard = () => {
                 <div className="storage-usage-content w-[50%] mt-3">
                 <p className="flex items-center storagetext">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#0099FF] mr-2"></span>
-                  50% Used
+                  {dashboardData.storage_used}% Used
                 </p>
                 <p className="flex items-center storagetext">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#E0EFDF] mr-2"></span>
-                  <br /> 50% Available
+                  <br /> {dashboardData.storage_available}% Available
                 </p>
               </div>
                 <div className="storage-usage-percentage w-[50%]">
@@ -111,15 +128,15 @@ export const Dashboard = () => {
               <h3 className='dashboard-card-title'>CPU Ram usage</h3>
               <span className='flex justify-start gap-2 items-center'>
                 <h6 className='device-info-title'>CPU info : </h6>
-                <p className='device-info-content'>11th gen Intel (R) Core (TM) i5-1135G7 @2.4</p>
+                <p className='device-info-content'>{dashboardData.cpu}</p>
               </span>
               <span className='flex justify-start gap-2 items-center'>
                 <h6 className='device-info-title'>Uptime : </h6>
-                <p className='device-info-content'>11 minutes</p>
+                <p className='device-info-content'>{dashboardData.uptime}</p>
               </span>
               <span className='flex justify-start gap-2 items-center'>
                 <h6 className='device-info-title'>CPU speed : </h6>
-                <p className='device-info-content'>2,419.20 MHz</p>
+                <p className='device-info-content'>{dashboardData.cpuspeed}</p>
               </span>
 
               <hr className='text-[#EDEDFF] bg-[#EDEDFF] h-[2px]'/>
@@ -132,7 +149,7 @@ export const Dashboard = () => {
                 <div className="progres-bar w-full bg-[#F2F2F2]  rounded-[10px] overflow-hidden">
                   <div className="progress-bar-inner bg-[#00ADEE] w-[15%] h-full" style={{borderTopRightRadius:"10px" , borderBottomRightRadius:"10px"}}></div>
                 </div>
-                <span className='text-black status-text'>7%</span>
+                <span className='text-black status-text'>{dashboardData.cpu_usage}</span>
                 </div>
               </div>
               <div className="usage-card flex items-start justify-start gap-2">
@@ -143,7 +160,7 @@ export const Dashboard = () => {
                 <div className="progres-bar w-full bg-[#F2F2F2]  rounded-[10px] overflow-hidden">
                   <div className="progress-bar-inner bg-[#64AE5F] w-[15%] h-full" style={{borderTopRightRadius:"10px" , borderBottomRightRadius:"10px"}}></div>
                 </div>
-                <span className='text-black status-text'>7% | 12,038.44 mb</span>
+                <span className='text-black status-text'>{dashboardData.usage_ram}</span>
                 </div>
               </div>
               <div className="usage-card flex items-start justify-start gap-2">
@@ -154,7 +171,7 @@ export const Dashboard = () => {
                 <div className="progres-bar w-full bg-[#F2F2F2]  rounded-[10px] overflow-hidden">
                   <div className="progress-bar-inner bg-[#FEC610] w-[15%] h-full" style={{borderTopRightRadius:"10px" , borderBottomRightRadius:"10px"}}></div>
                 </div>
-                <span className='text-black status-text'>3% | 5,251.00 mb</span>
+                <span className='text-black status-text'>{dashboardData.cpu_swap}</span>
                 </div>
               </div>
             </div>

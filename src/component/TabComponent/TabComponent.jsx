@@ -45,7 +45,7 @@ const TabComponent = ({ navItems, tabContents }) => {
                 >
                   {item.icon}
                 </span>
-                <span className="font-bold text-sm">{item.label}</span>
+                <span className="tab-component-label">{item.label}</span>
               </button>
             ))}
           </nav>
