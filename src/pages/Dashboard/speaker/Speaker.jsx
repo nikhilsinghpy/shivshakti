@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import DataTable from '../../../component/DataTable/DataTable'
+import PopupDialog from '../../../component/PopupDialog/PopupDialog '
+import AddSpeakerForm from '../../../component/Forms/AddSpeakerForm'
 export const Speaker = () => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false)
+
   const exampleData = []
 
   const exampleColumns = [
@@ -15,9 +19,13 @@ export const Speaker = () => {
   const handleExportCsv = () => console.log('Exporting CSV...')
   const handleView = () => console.log('Exporting CSV...')
   const handleButtonClick = () => {
-    alert('Button clicked!')
+    setIsDialogOpen(true);
   }
 
+  const handleSubmit = (data) => {
+    console.log(data);
+    
+  }
   return (
     <div className="w-full">
       <DataTable
@@ -29,10 +37,20 @@ export const Speaker = () => {
         exportCsv={handleExportCsv}
         title="All Speaker"
         customButton={{
-          label: 'Add Location',
+          label: 'Add Speaker',
           onClick: handleButtonClick,
         }}
       />
+
+      <PopupDialog
+        isOpen={isDialogOpen}
+        onClose={() => setIsDialogOpen(false)}
+        title="Add Camera"
+        height="600px"
+        width="980px"
+      >
+        <AddSpeakerForm onFormSubmit={handleSubmit}/>
+      </PopupDialog>
     </div>
   )
 }

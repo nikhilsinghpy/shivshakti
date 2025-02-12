@@ -20,6 +20,8 @@ import { Location } from './pages/Settings/location/Location';
 import { MobileDevices } from './pages/Settings/MobileDevices/MobileDevices';
 import BigForms from './component/Forms/BigForms';
 import { Imports } from './pages/Settings/Imports/Imports';
+import MyProfile from './component/Forms/MyProfile';
+import AddSpeakerForm from './component/Forms/AddSpeakerForm';
 
 
 function App() {
@@ -40,6 +42,8 @@ function App() {
           <Route path='/location' element={<Location />} />
           <Route path='/sub-location' element={<Sublocation />} />
           <Route path='/camera-list' element={<Cameralist />} />
+          <Route path='/my-profile' element={<MyProfile />} />
+          <Route path='/my' element={<AddSpeakerForm />} />
           <Route path='/department' element={<Department />} />
           <Route path='/designation' element={<Designation />} />
           <Route path='/mobile-devices' element={<MobileDevices />} />
