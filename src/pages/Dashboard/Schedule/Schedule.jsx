@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import DataTable from '../../../component/DataTable/DataTable'
+import PopupDialog from '../../../component/PopupDialog/PopupDialog '
+import AddScheduleForm from '../../../component/Forms/AddScheduleForm'
 export const Schedule = () => {
+    const [isDialogOpen, setIsDialogOpen] = useState(false)
+  
   const exampleData = []
 
   const exampleColumns = [
@@ -11,15 +15,17 @@ export const Schedule = () => {
     { label: 'status', accessor: 'status' },
   ]
 
-
   const handleEdit = (row) => console.log('Edit:', row)
   const handleDelete = (row) => console.log('Delete:', row)
   const handleExportCsv = () => console.log('Exporting CSV...')
   const handleView = () => console.log('Exporting CSV...')
   const handleButtonClick = () => {
-    alert('Button clicked!')
+    setIsDialogOpen(true);
   }
 
+  const handleSubmit = (data) => {
+    console.log(data);
+  }
   return (
     <div className="w-full">
       <DataTable
@@ -34,8 +40,17 @@ export const Schedule = () => {
           label: 'Schedule Now',
           onClick: handleButtonClick,
         }}
-        searchbarclass='w-[200px]'
+        searchbarclass="w-[200px]"
       />
+      <PopupDialog
+        isOpen={isDialogOpen}
+        onClose={() => setIsDialogOpen(false)}
+        title="Schedule announcements"
+        height="600px"
+        width="800px"
+      >
+        <AddScheduleForm onFormSubmit={handleSubmit} />
+      </PopupDialog>{' '}
     </div>
   )
 }

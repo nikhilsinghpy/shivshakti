@@ -51,7 +51,7 @@
 .tab-card {
     z-index: 10;
     position: relative;
-    height: calc(100dvh - 30vh);
+    height: calc(100dvh - 35vh);
 }
 
 .tab-button-backg.hide-after::after {
@@ -61,7 +61,9 @@
 .tab-button-backg.hide-before::before {
     content: none;
 }
-
+.tab-component-label{
+    font-size: .8rem;
+}
 /* Media Queries for Responsiveness */
 
 /* For screens smaller than 768px (Mobile devices) */
@@ -83,9 +85,8 @@
         width: 1.5rem;  /* Smaller icon size */
         height: 1.5rem;  /* Adjust icon size */
     }
-
-    .tab-card {
-        height: calc(100dvh - 20vh);  /* Adjust tab card height */
+    .tab-component-label{
+        font-size: .6rem;
     }
 }
 
@@ -106,10 +107,6 @@
     .tab-button-backg::after {
         width: 1.8rem;  /* Adjust icon size */
         height: 1.8rem;  /* Adjust icon size */
-    }
-
-    .tab-card {
-        height: calc(100dvh - 25vh);  /* Adjust tab card height */
     }
 }
 
@@ -137,13 +134,13 @@
         width: 2.3rem;
     }
 
-    .tab-card {
-        height: calc(100dvh - 30vh);  /* Default tab card height */
+    .tab-component-label{
+        font-size: .7rem;
     }
 }
 
 /* For screens between 1200px and 1600px */
-@media (min-width: 1200px) and (max-width: 1600px) {
+@media (min-width: 1200px) and (max-width: 1360px) {
     .tab-button {
         padding: 25px ;  /* Larger padding for desktop */
         font-size: 1.2rem;  /* Larger font size */
@@ -167,7 +164,64 @@
         background: #000;
     }
 
-    .tab-card {
-        height: calc(100dvh - 30vh);  /* Default tab card height */
+    .tab-component-label{
+        font-size: .8rem;
+    }
+}
+@media (min-width: 1360px) and (max-width: 1600px) {
+    .tab-button {
+        padding: 25px ;  /* Larger padding for desktop */
+        font-size: 1.2rem;  /* Larger font size */
+        background: #000;
+    }
+
+    .tab-button-backg {
+        width: 140px;  /* Default size for desktop */
+        height: 100px;  /* Default height */
+        top: -3%;  /* Default positioning */
+    }
+
+    .tab-button-backg::before,
+    .tab-button-backg::after {
+        width: 2rem;  /* Default icon size */
+        height: 2rem;  /* Default icon size */
+    }
+    .tab-component-svg{
+        height: 3rem;
+        width: 3rem;
+        background: #000;
+    }
+
+    .tab-component-label{
+        font-size: .9rem;
+    }
+}
+
+@media (min-width: 1600px) and (max-width: 1980px) {
+    .tab-button {
+        padding: 25px ;  /* Larger padding for desktop */
+        font-size: 1.2rem;  /* Larger font size */
+        background: #000;
+    }
+
+    .tab-button-backg {
+        width: 140px;  /* Default size for desktop */
+        height: 100px;  /* Default height */
+        top: -3%;  /* Default positioning */
+    }
+
+    .tab-button-backg::before,
+    .tab-button-backg::after {
+        width: 2rem;  /* Default icon size */
+        height: 2rem;  /* Default icon size */
+    }
+    .tab-component-svg{
+        height: 3.1rem;
+        width: 3.1rem;
+        background: #000;
+    }
+
+    .tab-component-label{
+        font-size: 1rem;
     }
 }

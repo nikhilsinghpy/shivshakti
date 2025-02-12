@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import DataTable from '../../../component/DataTable/DataTable'
+import PopupDialog from '../../../component/PopupDialog/PopupDialog '
+import AddZoneForm from '../../../component/Forms/AddZoneForm'
 export const Zones = () => {
+    const [isDialogOpen, setIsDialogOpen] = useState(false)
+  
   const exampleData = []
 
   const exampleColumns = [
@@ -16,7 +20,12 @@ export const Zones = () => {
   const handleExportCsv = () => console.log('Exporting CSV...')
   const handleView = () => console.log('Exporting CSV...')
   const handleButtonClick = () => {
-    alert('Button clicked!')
+    setIsDialogOpen(true);
+  }
+
+  const handleSubmit = (data) =>{
+    console.log(data);
+    
   }
 
   return (
@@ -34,6 +43,16 @@ export const Zones = () => {
           onClick: handleButtonClick,
         }}
       />
+
+      <PopupDialog
+        isOpen={isDialogOpen}
+        onClose={() => setIsDialogOpen(false)}
+        title="Add Zone"
+        height="520px"
+        width="800px"
+      >
+        <AddZoneForm onFormSubmit={handleSubmit} />
+      </PopupDialog>
     </div>
   )
 }

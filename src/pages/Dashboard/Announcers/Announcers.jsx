@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import DataTable from '../../../component/DataTable/DataTable'
+import PopupDialog from '../../../component/PopupDialog/PopupDialog '
+import AddSpeakerForm from '../../../component/Forms/AddSpeakerForm'
+import AddAnnouncers from '../../../component/Forms/AddAnnouncers'
 
 export const Announcers = () => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false)
+  
   const exampleData = []
+  
 
   const exampleColumns = [
     { label: 'Speaker Name', accessor: 'Speaker_name' },
@@ -16,10 +22,15 @@ export const Announcers = () => {
   const handleDelete = (row) => console.log('Delete:', row)
   const handleExportCsv = () => console.log('Exporting CSV...')
   const handleView = () => console.log('Exporting CSV...')
+
   const handleButtonClick = () => {
-    alert('Button clicked!')
+    setIsDialogOpen(true);
   }
 
+  const handleSubmit = (data) => {
+    console.log(data);
+    
+  }
   return (
     <div className="w-full">
       <DataTable
@@ -35,6 +46,16 @@ export const Announcers = () => {
           onClick: handleButtonClick,
         }}
       />
+      <PopupDialog
+        isOpen={isDialogOpen}
+        onClose={() => setIsDialogOpen(false)}
+        title="Add Announcer"
+        height="600px"
+        width="800px"
+      >
+        <AddAnnouncers onFormSubmit={handleSubmit} />
+      </PopupDialog>{' '}
+      
     </div>
   )
 }

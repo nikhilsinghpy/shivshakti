@@ -72,9 +72,9 @@ const DataTable = ({
           <thead>
             <tr>
               {columns.map((col) => (
-                <th key={col.accessor}>{col.label}</th>
+                <th key={col.accessor} className="data-table__header-cell">{col.label}</th>
               ))}
-              <th>Action</th>
+              <th className="data-table__header-cell">Action</th>
             </tr>
           </thead>
           <tbody>

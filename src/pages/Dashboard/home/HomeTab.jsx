@@ -4,12 +4,12 @@ import microphone from '../../../assets/Mic.png'
 import clock from '../../../assets/Group 476.png'
 import speakerAlt from '../../../assets/Speaker Group.png'
 import './HomeTab.css'
-export const HomeTab = () => {
+export const HomeTab = ({data}) => {
   const cardata = [
     {
       title: 'Speakers',
-      online: 27,
-      offline: 10,
+      online: `${data.onlinespeakers}`,
+      offline: `${data.offlinespeakers}`,
       icon: speaker,
       background: 'bg-[#00ADEE]',
       textcolor: 'text-white',
@@ -17,8 +17,8 @@ export const HomeTab = () => {
     },
     {
       title: 'Announcers',
-      online: 27,
-      offline: 10,
+      online: `${data.onlineannouncers}`,
+      offline: `${data.onlinespeakers}`,
       icon: microphone,
       background: 'bg-[#64AE5F]',
       textcolor: 'text-white',
@@ -26,8 +26,8 @@ export const HomeTab = () => {
     },
     {
       title: 'Schedules',
-      online: 27,
-      offline: 10,
+      online: `${data.active_schedule}`,
+      offline: `${data.inactive_schedule}`,
       icon: clock,
       background: 'bg-[#E0EFDF]',
       textcolor: 'text-gray-700',
@@ -35,8 +35,8 @@ export const HomeTab = () => {
     },
     {
       title: 'Zones',
-      online: 27,
-      offline: 10,
+      online: `${data.active_zones}`,
+      offline: `${data.inactive_zones}`,
       icon: speakerAlt,
       background: 'bg-[#DFEBEF]',
       textcolor: 'text-gray-700',

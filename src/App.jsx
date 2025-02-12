@@ -22,6 +22,7 @@ import BigForms from './component/Forms/BigForms';
 import { Imports } from './pages/Settings/Imports/Imports';
 import MyProfile from './component/Forms/MyProfile';
 import AddSpeakerForm from './component/Forms/AddSpeakerForm';
+import { Login } from './pages/Login/Login';
 
 
 function App() {
@@ -29,10 +30,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* Public route for login */}
-
+        <Route path="/" element={<Login />} />
         {/* Protected routes */}
         <Route element={<Layout />}>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path='/manage-user' element={<Manageuser />} />
           <Route path='/manage-password' element={<ManagePassword />} />
           <Route path='/access-rights' element={<Accessrights />} />

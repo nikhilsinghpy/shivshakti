@@ -88,7 +88,7 @@
         font-size: 1.2rem;
     }
     .progres-bar{
-        height: 18px;
+        height: 16px;
         border-radius: 1rem;
     }
 
@@ -163,7 +163,7 @@
 
 
     .usage-card{
-        font-size: 1rem;
+        font-size: .8rem;
         color: #5b5e63;
     }
     
@@ -171,7 +171,7 @@
         font-size: 12px;
     }
     .progres-bar{
-        height: 15px;
+        height: 12spx;
         border-radius: 1rem;
     }
     
