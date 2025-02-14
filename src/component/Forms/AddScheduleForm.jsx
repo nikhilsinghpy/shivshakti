@@ -94,7 +94,7 @@ const AddScheduleForm = ({ onFormSubmit }) => {
                                     {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((day) => (
                                         <button
                                             key={day}
-                                            className="px-4 py-2 text-sm bg-blue-500 text-white rounded"
+                                            className="px-4 py-2 text-sm bg-white text-gray-800 border-1 border-gray-300 rounded"
                                             onClick={(e) => handleButtonClick(e, day)} // Trigger the handleButtonClick function
                                         >
                                             {day}

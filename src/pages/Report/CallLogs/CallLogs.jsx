@@ -1,6 +1,6 @@
 import React from 'react'
 import DataTable from '../../../component/DataTable/DataTable'
-import { Breadcrumbs, BreadcrumbItem } from '@nextui-org/breadcrumbs'
+import { Breadcrumbs, BreadcrumbItem } from "@heroui/breadcrumbs"
 
 export const CallLogs = () => {
   // Example data and functions

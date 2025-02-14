@@ -3,7 +3,7 @@ import React from "react";
 const PopupDialog = ({ isOpen, onClose, title, children, height, width }) => {
     if (!isOpen) return null;    
     return (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[999]">
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50" style={{zIndex: 999}}>
             <div
                 className="bg-white rounded-2xl shadow-lg p-6 relative"
                 style={{
