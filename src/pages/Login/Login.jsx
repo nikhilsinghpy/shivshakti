@@ -34,7 +34,7 @@ export const Login = () => {
       if (response.Sucess === 'true') {
         toast.dismiss()
         toast.success(response.Message)
-        localStorage.setItem('user_info', JSON.stringify(response.Data[0]));
+        sessionStorage.setItem('user_info', JSON.stringify(response.Data[0]));
         setTimeout(() => {
             window.location.href = '/dashboard'
         }, 2000);

@@ -11,6 +11,7 @@ import img from '../../assets/roundedchart.svg'
 import { BottomNav } from '../../component/BottomNav/BottomNav'
 import { useEffect, useState } from 'react'
 import { getapi } from '../../api/GetAPI'
+import { ToastContainer } from 'react-toastify'
 
 
 
@@ -80,8 +81,9 @@ export const Dashboard = () => {
 
   return (
     <>
+    <ToastContainer/>
       <div className="flex w-full h-screen">
-        <div className="w-[77.49%] bg-gray-100 p-4">
+        <div className="w-[77.49%] bg-gray-100 p-4 relative">
           <TabComponent navItems={navItems} tabContents={tabContents} />
 
           <BottomNav/>

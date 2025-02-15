@@ -7,7 +7,7 @@ const ProtectedRoute = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const storedToken = sessionStorage.getItem("data");
+        const storedToken = sessionStorage.getItem("user_info");
         setToken(storedToken);
         setLoading(false);
     }, []);

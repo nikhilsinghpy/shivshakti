@@ -23,6 +23,7 @@ import { Imports } from './pages/Settings/Imports/Imports';
 import MyProfile from './component/Forms/MyProfile';
 import AddSpeakerForm from './component/Forms/AddSpeakerForm';
 import { Login } from './pages/Login/Login';
+import ProtectedRoute from './utils/ProtectedRoute';
 
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
         {/* Public route for login */}
         <Route path="/" element={<Login />} />
         {/* Protected routes */}
-        <Route element={<Layout />}>
+        <Route element={  <ProtectedRoute><Layout /> </ProtectedRoute>}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path='/manage-user' element={<Manageuser />} />
           <Route path='/manage-password' element={<ManagePassword />} />
